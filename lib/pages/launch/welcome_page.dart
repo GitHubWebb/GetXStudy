@@ -14,8 +14,8 @@ class WelcomePage extends StatelessWidget {
       body: PageView(
         physics: const ClampingScrollPhysics(),
         children: [
-          _welcomeView("welcome_2.jpg", false),
-          _welcomeView("welcome_1.png", true),
+          _welcomeView("welcome_2.jpg", true),
+          // _welcomeView("welcome_1.png", true),
         ],
       ),
     );
