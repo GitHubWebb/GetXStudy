@@ -3,9 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:getx_study/account_manager/account_binding.dart';
-import 'package:getx_study/base/app_env_config.dart';
+import 'package:getx_study/env/app_env_config.dart';
 import 'package:getx_study/base/getx_router_observer.dart';
 import 'package:getx_study/extension/theme_data_extension.dart';
 import 'package:getx_study/logger/logger.dart';
@@ -19,104 +20,121 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print("build isFirst : $isFirst");
-    return GetMaterialApp(
-      title: '麦卡出行',
-      navigatorObservers: [GetXRouterObserver()],
-      unknownRoute: Routes.unknownPage,
-      debugShowCheckedModeBanner:
-          AppEnvironment.environment == Environment.dev ? true : false,
 
-      /// 通过使用initialRoute来保证绑定的操作
-      initialRoute: isFirst ? Routes.welcome : Routes.splash,
-      getPages: Routes.routePage,
-      onGenerateRoute: (settings) {
-        logger.d(settings.name);
-        return null;
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return GetMaterialApp(
+          title: '麦卡出行',
+          navigatorObservers: [GetXRouterObserver()],
+          unknownRoute: Routes.unknownPage,
+          debugShowCheckedModeBanner:
+              AppEnvironment.environment == Environment.dev ? true : false,
+
+          /// 通过使用initialRoute来保证绑定的操作
+          initialRoute: isFirst ? Routes.welcome : Routes.splash,
+          getPages: Routes.routePage,
+          onGenerateRoute: (settings) {
+            logger.d(settings.name);
+            return null;
+          },
+
+          /// 经过初始化的binding,
+          initialBinding: AccountBinding(),
+
+          /// 使用toast
+          // builder: EasyLoading.init(),
+          builder: (context, child) {
+            // 使用toast
+            child = EasyLoading.init()(context, child);
+            // return child;
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              child: child,
+            );
+          },
+
+          /// 自定义主题
+          theme: FlexThemeData.light(
+            colors: const FlexSchemeColor(
+              primary: Color(0xff065808),
+              primaryContainer: Color(0xff9ee29f),
+              secondary: Color(0xff365b37),
+              secondaryContainer: Color(0xffaebdaf),
+              tertiary: Color(0xff2c7e2e),
+              tertiaryContainer: Color(0xffb8e6b9),
+              appBarColor: Color(0xffb8e6b9),
+              error: Color(0xffb00020),
+            ),
+            surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+            blendLevel: 7,
+            subThemesData: const FlexSubThemesData(
+              appBarBackgroundSchemeColor: SchemeColor.error,
+              blendOnLevel: 10,
+              blendOnColors: false,
+              useTextTheme: true,
+              useM2StyleDividerInM3: true,
+              adaptiveAppBarScrollUnderOff: FlexAdaptive.all(),
+              inputDecoratorBorderType: FlexInputBorderType.underline,
+            ),
+            visualDensity: FlexColorScheme.comfortablePlatformDensity,
+            useMaterial3: true,
+            swapLegacyOnMaterial3: true,
+          ).copyWith(
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.red,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+              ),
+            ),
+          ),
+          darkTheme: FlexThemeData.dark(
+            colors: const FlexSchemeColor(
+              primary: Color(0xff629f80),
+              primaryContainer: Color(0xff274033),
+              secondary: Color(0xff81b39a),
+              secondaryContainer: Color(0xff4d6b5c),
+              tertiary: Color(0xff88c5a6),
+              tertiaryContainer: Color(0xff356c50),
+              appBarColor: Color(0xff356c50),
+              error: Color(0xffcf6679),
+            ),
+            surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+            blendLevel: 13,
+            subThemesData: const FlexSubThemesData(
+              appBarBackgroundSchemeColor: SchemeColor.error,
+              blendOnLevel: 20,
+              useTextTheme: true,
+              useM2StyleDividerInM3: true,
+              inputDecoratorBorderType: FlexInputBorderType.underline,
+              adaptiveAppBarScrollUnderOff: FlexAdaptive.all(),
+            ),
+            visualDensity: FlexColorScheme.comfortablePlatformDensity,
+            useMaterial3: true,
+            swapLegacyOnMaterial3: true,
+          ).copyWith(
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.red,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+              ),
+            ),
+          ),
+          themeMode: ThemeMode.system,
+        );
       },
-
-      /// 经过初始化的binding,
-      initialBinding: AccountBinding(),
-
-      /// 使用toast
-      builder: EasyLoading.init(),
-
-      /// 自定义主题
-      theme: FlexThemeData.light(
-        colors: const FlexSchemeColor(
-          primary: Color(0xff065808),
-          primaryContainer: Color(0xff9ee29f),
-          secondary: Color(0xff365b37),
-          secondaryContainer: Color(0xffaebdaf),
-          tertiary: Color(0xff2c7e2e),
-          tertiaryContainer: Color(0xffb8e6b9),
-          appBarColor: Color(0xffb8e6b9),
-          error: Color(0xffb00020),
-        ),
-        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
-        blendLevel: 7,
-        subThemesData: const FlexSubThemesData(
-          appBarBackgroundSchemeColor: SchemeColor.error,
-          blendOnLevel: 10,
-          blendOnColors: false,
-          useTextTheme: true,
-          useM2StyleDividerInM3: true,
-          adaptiveAppBarScrollUnderOff: FlexAdaptive.all(),
-          inputDecoratorBorderType: FlexInputBorderType.underline,
-        ),
-        visualDensity: FlexColorScheme.comfortablePlatformDensity,
-        useMaterial3: true,
-        swapLegacyOnMaterial3: true,
-      ).copyWith(
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            foregroundColor: Colors.white,
-            backgroundColor: Colors.red,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-          ),
-        ),
-      ),
-      darkTheme: FlexThemeData.dark(
-        colors: const FlexSchemeColor(
-          primary: Color(0xff629f80),
-          primaryContainer: Color(0xff274033),
-          secondary: Color(0xff81b39a),
-          secondaryContainer: Color(0xff4d6b5c),
-          tertiary: Color(0xff88c5a6),
-          tertiaryContainer: Color(0xff356c50),
-          appBarColor: Color(0xff356c50),
-          error: Color(0xffcf6679),
-        ),
-        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
-        blendLevel: 13,
-        subThemesData: const FlexSubThemesData(
-          appBarBackgroundSchemeColor: SchemeColor.error,
-          blendOnLevel: 20,
-          useTextTheme: true,
-          useM2StyleDividerInM3: true,
-          inputDecoratorBorderType: FlexInputBorderType.underline,
-          adaptiveAppBarScrollUnderOff: FlexAdaptive.all(),
-        ),
-        visualDensity: FlexColorScheme.comfortablePlatformDensity,
-        useMaterial3: true,
-        swapLegacyOnMaterial3: true,
-      ).copyWith(
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            foregroundColor: Colors.white,
-            backgroundColor: Colors.red,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-          ),
-        ),
-      ),
-      themeMode: ThemeMode.system,
-
-      // theme: _getCupertinoCurrentTheme(),
     );
   }
 

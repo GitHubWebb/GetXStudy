@@ -5,10 +5,32 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "getx_study",
+      "name": "dev",
       "request": "launch",
       "type": "dart",
-      "program": "${workspaceFolder}/lib/main_dev.dart"
+      "program": "${workspaceFolder}/lib/main_dev.dart",
+      "args": ["--flavor", "dev"]
+    },
+    {
+      "name": "sit",
+      "request": "launch",
+      "type": "dart",
+      "program": "${workspaceFolder}/lib/main_sit.dart",
+      "args": ["--flavor", "sit"]
+    },
+    {
+      "name": "uat",
+      "request": "launch",
+      "type": "dart",
+      "program": "${workspaceFolder}/lib/main_uat.dart",
+      "args": ["--flavor", "uat"]
+    },
+    {
+      "name": "prod",
+      "request": "launch",
+      "type": "dart",
+      "program": "${workspaceFolder}/lib/main_prod.dart",
+      "args": ["--flavor", "prod"]
     },
     {
       "name": "getx_study (profile mode)",

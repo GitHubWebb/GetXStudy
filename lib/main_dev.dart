@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:getx_study/account_manager/account_manager.dart';
-import 'package:getx_study/base/app_env_config.dart';
+import 'package:getx_study/env/app_env_config.dart';
 import 'package:getx_study/my_app.dart';
 
 void main() {
