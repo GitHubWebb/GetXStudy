@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:getx_study/base/app_env_config.dart';
 import 'package:getx_study/logger/logger.dart';
 import 'package:getx_study/pages/common/my_list_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -23,7 +24,7 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: const Text("首页"),
+        middle: Text("首页:${AppEnvironment.title}"),
         trailing: IconButton(
           icon: const Icon(CupertinoIcons.search),
           onPressed: (() => Get.toNamed(Routes.hotKey)),
