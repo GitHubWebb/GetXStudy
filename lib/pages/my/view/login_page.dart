@@ -19,6 +19,7 @@ class LoginPage extends GetView<LoginController> {
         // ),
         appBar: AppBar(
           title: const Text("登录"),
+          centerTitle: true,
         ),
         body: SafeArea(
           child: Padding(
