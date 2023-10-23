@@ -12,14 +12,11 @@ class LoginPage extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // navigationBar: const CupertinoNavigationBar(
-      //   middle: Text("登录"),
-      // ),
-      appBar: AppBar(
-        title: const Text("登录"),
-      ),
-      body: SafeArea(
+    return ResignFirstView(
+      child: CupertinoPageScaffold(
+        navigationBar: const CupertinoNavigationBar(
+          middle: Text("登录"),
+        ),
         child: Padding(
           padding: const EdgeInsets.only(top: 20),
           child: SingleChildScrollView(
