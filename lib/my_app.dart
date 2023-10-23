@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
           /// 自定义主题
           theme: FlexThemeData.light(
             colors: const FlexSchemeColor(
-              primary: Color(0xff065808),
+              primary: Color(0xffFF8A00),
               primaryContainer: Color(0xff9ee29f),
               secondary: Color(0xff365b37),
               secondaryContainer: Color(0xffaebdaf),
