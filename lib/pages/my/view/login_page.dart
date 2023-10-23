@@ -1,3 +1,5 @@
+import 'package:base_module/speak_app_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,12 +16,11 @@ class LoginPage extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return ResignFirstView(
       child: Scaffold(
-        // navigationBar: const CupertinoNavigationBar(
-        //   middle: Text("登录"),
-        // ),
-        appBar: AppBar(
-          title: const Text("登录"),
-          centerTitle: true,
+        appBar: SpeakAppBar(
+          leading: true,
+          title: "登录",
+          backIconColor: const Color(0xFF525252),
+          backgroundColor: const Color(0xF9F9F9),
         ),
         body: SafeArea(
           child: Padding(

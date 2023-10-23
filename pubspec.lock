@@ -257,7 +257,7 @@ packages:
     source: hosted
     version: "7.0.0"
   dio:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dio
       sha256: "417e2a6f9d83ab396ec38ff4ea5da6c254da71e4db765ad737a42af6930140b7"
@@ -398,7 +398,7 @@ packages:
     source: hosted
     version: "2.0.16"
   flutter_screenutil:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_screenutil
       sha256: "8cf100b8e4973dc570b6415a2090b0bfaa8756ad333db46939efc3e774ee100d"
@@ -448,7 +448,7 @@ packages:
     source: hosted
     version: "3.2.0"
   get:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: get
       sha256: e4e7335ede17452b391ed3b2ede016545706c01a02292a6c97619705e7d2a85e
@@ -848,7 +848,7 @@ packages:
     source: hosted
     version: "1.5.1"
   pretty_dio_logger:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: pretty_dio_logger
       sha256: "00b80053063935cf9a6190da344c5373b9d0e92da4c944c878ff2fbef0ef6dc2"
