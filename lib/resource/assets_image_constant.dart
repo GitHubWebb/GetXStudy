@@ -8,4 +8,13 @@ class AssetsImageConstant {
 
   static const myBarNor = "assets/images/tabs/my_normal@2x.png";
   static const myBarActive = "assets/images/tabs/my_actived@2x.png";
+
+  /// app my header background icons
+  static const myPageHeaderIcon = "assets/images/my/my_header_bg.png";
+  static const defaultAvatar = "assets/images/my/my_avatar.png";
+
+  static const myOrderIcon = "assets/images/my/my_orders_icon.png";
+  static const myBillIcon = "assets/images/my/my_bill_icon.png";
+  static const myCarChangeIcon = "assets/images/my/my_car_change_icon.png";
+  static const mySettingIcon = "assets/images/my/my_setting_icon.png";
 }

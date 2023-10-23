@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     print("build isFirst : $isFirst");
 
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize: const Size(375, 667),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -97,7 +97,7 @@ class MyApp extends StatelessWidget {
           ),
           darkTheme: FlexThemeData.dark(
             colors: const FlexSchemeColor(
-              primary: Color(0xff629f80),
+              primary: Color(0xffFF8A00),
               primaryContainer: Color(0xff274033),
               secondary: Color(0xff81b39a),
               secondaryContainer: Color(0xff4d6b5c),
