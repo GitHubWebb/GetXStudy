@@ -2,21 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:getx_study/env/app_env_config.dart';
-import 'package:getx_study/logger/logger.dart';
-import 'package:getx_study/pages/common/home_car_info_cell.dart';
-import 'package:getx_study/pages/common/my_list_view.dart';
+import 'package:cp_driver_app/env/app_env_config.dart';
+import 'package:cp_driver_app/logger/logger.dart';
+import 'package:cp_driver_app/pages/common/home_car_info_cell.dart';
+import 'package:cp_driver_app/pages/common/my_list_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:getx_study/extension/string_extension.dart';
-import 'package:getx_study/routes/routes.dart';
-import 'package:getx_study/pages/common/info_cell.dart';
-import 'package:getx_study/pages/common/status_view.dart';
-import 'package:getx_study/pages/home/controller/home_controller.dart';
-import 'package:getx_study/pages/common/refresh_header_footer.dart';
+import 'package:cp_driver_app/extension/string_extension.dart';
+import 'package:cp_driver_app/routes/routes.dart';
+import 'package:cp_driver_app/pages/common/info_cell.dart';
+import 'package:cp_driver_app/pages/common/status_view.dart';
+import 'package:cp_driver_app/pages/home/controller/home_controller.dart';
+import 'package:cp_driver_app/pages/common/refresh_header_footer.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);

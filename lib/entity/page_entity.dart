@@ -1,5 +1,5 @@
-import 'package:getx_study/entity/i_entity.dart';
-import 'package:getx_study/resource/constant.dart';
+import 'package:cp_driver_app/entity/i_entity.dart';
+import 'package:cp_driver_app/resource/constant.dart';
 
 /// 有关与BaseEntity<PageEntity<CoinRankDatas>>这种泛型解析我还没有找个非常好的方案,目前还是保证单层解析
 class PageEntity<T> extends IEntity<T> {

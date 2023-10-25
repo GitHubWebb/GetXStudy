@@ -9,7 +9,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
-import 'package:getx_study/logger/logger.dart';
+import 'package:cp_driver_app/logger/logger.dart';
 
 class H5JSChannelApp extends StatelessWidget {
   @override

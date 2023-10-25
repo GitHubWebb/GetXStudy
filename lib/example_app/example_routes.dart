@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:getx_study/example_app/get_x_app.dart';
+import 'package:cp_driver_app/example_app/get_x_app.dart';
 
 abstract class Routes {
   Routes._();

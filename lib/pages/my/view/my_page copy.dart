@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:getx_study/account_manager/account_manager.dart';
-import 'package:getx_study/enum/my.dart' as my;
-import 'package:getx_study/pages/my/controller/my_controller.dart';
-import 'package:getx_study/routes/routes.dart';
+import 'package:cp_driver_app/account_manager/account_manager.dart';
+import 'package:cp_driver_app/enum/my.dart' as my;
+import 'package:cp_driver_app/pages/my/controller/my_controller.dart';
+import 'package:cp_driver_app/routes/routes.dart';
 
 class MyPage extends GetView<MyController> {
   const MyPage({Key? key}) : super(key: key);

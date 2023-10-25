@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import "package:getx_study/base/base_controller.dart";
-import 'package:getx_study/base/interface.dart';
-import 'package:getx_study/enum/scroll_view_action_type.dart';
-import 'package:getx_study/enum/response_status.dart';
-import 'package:getx_study/entity/base_entity.dart';
-import 'package:getx_study/entity/page_entity.dart';
-import 'package:getx_study/logger/logger.dart';
+import "package:cp_driver_app/base/base_controller.dart";
+import 'package:cp_driver_app/base/interface.dart';
+import 'package:cp_driver_app/enum/scroll_view_action_type.dart';
+import 'package:cp_driver_app/enum/response_status.dart';
+import 'package:cp_driver_app/entity/base_entity.dart';
+import 'package:cp_driver_app/entity/page_entity.dart';
+import 'package:cp_driver_app/logger/logger.dart';
 
 abstract class BaseRefreshController<R extends IRepository, T> extends BaseController {
   late R request;

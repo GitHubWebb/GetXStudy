@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:getx_study/logger/logger.dart';
-import 'package:getx_study/pages/common/refresh_header_footer.dart';
-import 'package:getx_study/pages/common/status_view.dart';
+import 'package:cp_driver_app/logger/logger.dart';
+import 'package:cp_driver_app/pages/common/refresh_header_footer.dart';
+import 'package:cp_driver_app/pages/common/status_view.dart';
 
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:get/get.dart';
-import 'package:getx_study/pages/coin_rank/controller/coin_rank_controller.dart';
+import 'package:cp_driver_app/pages/coin_rank/controller/coin_rank_controller.dart';
 
 class CoinRankPage extends GetView<CoinRankController> {
   const CoinRankPage({Key? key}) : super(key: key);

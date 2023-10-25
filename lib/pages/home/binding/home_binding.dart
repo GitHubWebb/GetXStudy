@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:getx_study/logger/class_name.dart';
+import 'package:cp_driver_app/logger/class_name.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:getx_study/pages/home/controller/home_controller.dart';
-import 'package:getx_study/pages/home/repository/home_repository.dart';
+import 'package:cp_driver_app/pages/home/controller/home_controller.dart';
+import 'package:cp_driver_app/pages/home/repository/home_repository.dart';
 
 class HomeBinding extends Bindings {
   @override

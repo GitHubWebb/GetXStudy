@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:getx_study/entity/account_info_entity.dart';
+import 'package:cp_driver_app/entity/account_info_entity.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AccountManager {

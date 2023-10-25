@@ -5,12 +5,12 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'package:get/get.dart';
 import 'package:share/share.dart';
 
-import 'package:getx_study/account_manager/account_manager.dart';
-import 'package:getx_study/pages/web/controller/web_controller.dart';
+import 'package:cp_driver_app/account_manager/account_manager.dart';
+import 'package:cp_driver_app/pages/web/controller/web_controller.dart';
 import 'package:marquee/marquee.dart';
 
-import 'package:getx_study/base/interface.dart';
-import 'package:getx_study/extension/string_extension.dart';
+import 'package:cp_driver_app/base/interface.dart';
+import 'package:cp_driver_app/extension/string_extension.dart';
 
 class WebPage extends GetView<WebController> {
   const WebPage({Key? key}) : super(key: key);

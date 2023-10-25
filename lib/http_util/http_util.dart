@@ -7,7 +7,7 @@ import 'package:native_dio_adapter/native_dio_adapter.dart';
 import 'api.dart';
 import 'http_status.dart' as season;
 import 'plugins.dart';
-import 'package:getx_study/account_manager/account_manager.dart';
+import 'package:cp_driver_app/account_manager/account_manager.dart';
 
 /// 这个是用来判断是否是生产环境
 const bool inProduction = bool.fromEnvironment("dart.vm.product");

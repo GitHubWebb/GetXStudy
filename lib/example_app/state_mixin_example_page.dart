@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:getx_study/pages/home/repository/hot_key_repository.dart';
-import 'package:getx_study/entity/hot_key_entity.dart';
+import 'package:cp_driver_app/pages/home/repository/hot_key_repository.dart';
+import 'package:cp_driver_app/entity/hot_key_entity.dart';
 
 /// 在这里我使用Getx自带的StateMixin在Controller层改变状态,在Page层通过状态改变页面展示
 

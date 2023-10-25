@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import 'package:getx_study/pages/main/controller/main_controller.dart';
+import 'package:cp_driver_app/pages/main/controller/main_controller.dart';
 
 class MainBinding extends Bindings {
   @override

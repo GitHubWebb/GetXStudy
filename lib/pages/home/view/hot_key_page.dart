@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:getx_study/base/resign_first_responder.dart';
-import 'package:getx_study/routes/routes.dart';
-import 'package:getx_study/pages/common/status_view.dart';
-import 'package:getx_study/pages/home/controller/hot_key_controller.dart';
+import 'package:cp_driver_app/base/resign_first_responder.dart';
+import 'package:cp_driver_app/routes/routes.dart';
+import 'package:cp_driver_app/pages/common/status_view.dart';
+import 'package:cp_driver_app/pages/home/controller/hot_key_controller.dart';
 import 'search_text_field.dart';
 
 class HotKeyPage extends GetView<HotKeyController> {

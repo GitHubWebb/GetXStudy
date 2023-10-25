@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
-import 'package:getx_study/account_manager/account_controller.dart';
-import 'package:getx_study/enum/main_tag_type.dart';
-import 'package:getx_study/logger/logger.dart';
-import 'package:getx_study/pages/main/controller/main_controller.dart';
+import 'package:cp_driver_app/account_manager/account_controller.dart';
+import 'package:cp_driver_app/enum/main_tag_type.dart';
+import 'package:cp_driver_app/logger/logger.dart';
+import 'package:cp_driver_app/pages/main/controller/main_controller.dart';
 
 class MainPage extends GetView<MainController> {
   const MainPage({Key? key}) : super(key: key);

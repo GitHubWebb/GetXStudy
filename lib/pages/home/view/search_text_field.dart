@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:getx_study/extension/theme_data_extension.dart';
-import 'package:getx_study/base/resign_first_responder.dart';
-import 'package:getx_study/logger/logger.dart';
+import 'package:cp_driver_app/extension/theme_data_extension.dart';
+import 'package:cp_driver_app/base/resign_first_responder.dart';
+import 'package:cp_driver_app/logger/logger.dart';
 
 class SearchTextField extends StatelessWidget {
   final searchKeyCtrl = TextEditingController(text: '');

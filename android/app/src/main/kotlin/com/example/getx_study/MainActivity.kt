@@ -1,4 +1,4 @@
-package com.example.getx_study
+package com.example.cp_driver_app
 
 import io.flutter.embedding.android.FlutterActivity
 

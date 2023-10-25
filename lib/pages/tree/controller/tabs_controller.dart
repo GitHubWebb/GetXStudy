@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
-import 'package:getx_study/enum/tag_type.dart';
-import 'package:getx_study/base/base_request_controller.dart';
-import 'package:getx_study/entity/tab_entity.dart';
-import 'package:getx_study/enum/response_status.dart';
-import 'package:getx_study/pages/tree/repository/tabs_repository.dart';
-import 'package:getx_study/logger/logger.dart';
+import 'package:cp_driver_app/enum/tag_type.dart';
+import 'package:cp_driver_app/base/base_request_controller.dart';
+import 'package:cp_driver_app/entity/tab_entity.dart';
+import 'package:cp_driver_app/enum/response_status.dart';
+import 'package:cp_driver_app/pages/tree/repository/tabs_repository.dart';
+import 'package:cp_driver_app/logger/logger.dart';
 
 class TabsController
     extends BaseRequestController<TabsRepository, List<TabEntity>> with ScrollMixin {

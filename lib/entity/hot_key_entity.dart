@@ -1,5 +1,5 @@
-import 'package:getx_study/generated/json/base/json_field.dart';
-import 'package:getx_study/generated/json/hot_key_entity.g.dart';
+import 'package:cp_driver_app/generated/json/base/json_field.dart';
+import 'package:cp_driver_app/generated/json/hot_key_entity.g.dart';
 import 'dart:convert';
 
 @JsonSerializable()

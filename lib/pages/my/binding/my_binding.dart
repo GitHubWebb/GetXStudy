@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import 'package:getx_study/pages/my/controller/my_controller.dart';
-import 'package:getx_study/pages/my/repository/my_repository.dart';
+import 'package:cp_driver_app/pages/my/controller/my_controller.dart';
+import 'package:cp_driver_app/pages/my/repository/my_repository.dart';
 
 class MyBinding extends Bindings {
   @override

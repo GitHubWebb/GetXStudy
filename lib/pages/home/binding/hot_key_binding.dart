@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import 'package:getx_study/pages/home/repository/hot_key_repository.dart';
-import 'package:getx_study/pages/home/controller/hot_key_controller.dart';
+import 'package:cp_driver_app/pages/home/repository/hot_key_repository.dart';
+import 'package:cp_driver_app/pages/home/controller/hot_key_controller.dart';
 
 class HotKeyBinding extends Bindings {
   @override

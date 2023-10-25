@@ -1,5 +1,5 @@
-import 'package:getx_study/generated/json/base/json_convert_content.dart';
-import 'package:getx_study/entity/my_coin_history_entity.dart';
+import 'package:cp_driver_app/generated/json/base/json_convert_content.dart';
+import 'package:cp_driver_app/entity/my_coin_history_entity.dart';
 
 MyCoinHistoryEntity $MyCoinHistoryEntityFromJson(Map<String, dynamic> json) {
 	final MyCoinHistoryEntity myCoinHistoryEntity = MyCoinHistoryEntity();

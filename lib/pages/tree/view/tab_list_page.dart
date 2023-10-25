@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:get/get.dart';
-import 'package:getx_study/pages/common/empty_view.dart';
-import 'package:getx_study/pages/common/refresh_header_footer.dart';
+import 'package:cp_driver_app/pages/common/empty_view.dart';
+import 'package:cp_driver_app/pages/common/refresh_header_footer.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:getx_study/pages/tree/controller/tab_list_controller.dart';
-import 'package:getx_study/pages/common/info_cell.dart';
-import 'package:getx_study/routes/routes.dart';
+import 'package:cp_driver_app/pages/tree/controller/tab_list_controller.dart';
+import 'package:cp_driver_app/pages/common/info_cell.dart';
+import 'package:cp_driver_app/routes/routes.dart';
 
 class TabListPage extends StatelessWidget {
   final TabListController _controller;

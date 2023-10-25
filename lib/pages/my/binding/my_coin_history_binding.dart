@@ -1,9 +1,9 @@
-import 'package:getx_study/logger/class_name.dart';
+import 'package:cp_driver_app/logger/class_name.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:get/get.dart';
 
-import 'package:getx_study/pages/my/controller/my_coin_history_controller.dart';
-import 'package:getx_study/pages/my/repository/my_coin_history_repository.dart';
+import 'package:cp_driver_app/pages/my/controller/my_coin_history_controller.dart';
+import 'package:cp_driver_app/pages/my/repository/my_coin_history_repository.dart';
 
 class MyCoinHistoryBinding extends Bindings {
   @override

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:getx_study/base/resign_first_view.dart';
-import 'package:getx_study/pages/my/controller/login_controller.dart';
-import 'package:getx_study/routes/routes.dart';
+import 'package:cp_driver_app/base/resign_first_view.dart';
+import 'package:cp_driver_app/pages/my/controller/login_controller.dart';
+import 'package:cp_driver_app/routes/routes.dart';
 
 class LoginPage extends GetView<LoginController> {
   const LoginPage({Key? key}) : super(key: key);

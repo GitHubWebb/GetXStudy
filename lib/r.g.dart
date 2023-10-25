@@ -18,8 +18,8 @@
         
         /// This `R` class is generated and contains references to static asset resources.
         class R {
-          /// package name: getx_study
-          static const package = "getx_study";
+          /// package name: cp_driver_app
+          static const package = "cp_driver_app";
         
           /// This `R.image` struct is generated, and contains static references to static non-svg type image asset resources.
           static const image = _R_Image();

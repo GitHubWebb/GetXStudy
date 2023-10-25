@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:getx_study/enum/tag_type.dart';
-import 'package:getx_study/extension/string_extension.dart';
-import 'package:getx_study/pages/common/status_view.dart';
-import 'package:getx_study/pages/common/keep_alive_wrapper.dart';
-import 'package:getx_study/pages/tree/controller/tab_list_controller.dart';
-import 'package:getx_study/pages/tree/controller/tabs_controller.dart';
-import 'package:getx_study/pages/tree/view/tab_list_page.dart';
+import 'package:cp_driver_app/enum/tag_type.dart';
+import 'package:cp_driver_app/extension/string_extension.dart';
+import 'package:cp_driver_app/pages/common/status_view.dart';
+import 'package:cp_driver_app/pages/common/keep_alive_wrapper.dart';
+import 'package:cp_driver_app/pages/tree/controller/tab_list_controller.dart';
+import 'package:cp_driver_app/pages/tree/controller/tabs_controller.dart';
+import 'package:cp_driver_app/pages/tree/view/tab_list_page.dart';
 
 class TabsPage extends StatefulWidget {
   final TagType type;

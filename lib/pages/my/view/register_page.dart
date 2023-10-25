@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:getx_study/base/resign_first_view.dart';
-import 'package:getx_study/pages/my/controller/register_controller.dart';
+import 'package:cp_driver_app/base/resign_first_view.dart';
+import 'package:cp_driver_app/pages/my/controller/register_controller.dart';
 
 class RegisterPage extends GetView<RegisterController> {
   const RegisterPage({Key? key}) : super(key: key);

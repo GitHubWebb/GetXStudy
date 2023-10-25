@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:getx_study/account_manager/account_manager.dart';
-import 'package:getx_study/base/resign_first_responder.dart';
-import 'package:getx_study/pages/my/controller/login_controller.dart';
-import 'package:getx_study/logger/logger.dart';
+import 'package:cp_driver_app/account_manager/account_manager.dart';
+import 'package:cp_driver_app/base/resign_first_responder.dart';
+import 'package:cp_driver_app/pages/my/controller/login_controller.dart';
+import 'package:cp_driver_app/logger/logger.dart';
 
 class RegisterController extends LoginController {
   final rePasswordTextFiledController = TextEditingController(text: "");

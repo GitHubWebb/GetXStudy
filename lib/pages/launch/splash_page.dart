@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:getx_study/routes/routes.dart';
-import 'package:getx_study/pages/common/countdown_circle.dart';
+import 'package:cp_driver_app/routes/routes.dart';
+import 'package:cp_driver_app/pages/common/countdown_circle.dart';
 
 /// 模拟的一个广告页面
 class SplashPage extends StatelessWidget {

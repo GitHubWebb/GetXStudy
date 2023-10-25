@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:getx_study/enum/tag_type.dart';
+import 'package:cp_driver_app/enum/tag_type.dart';
 
-import 'package:getx_study/pages/home/view/home_page.dart';
-import 'package:getx_study/pages/my/view/my_page.dart';
-import 'package:getx_study/pages/tree/view/tabs_page.dart';
-import 'package:getx_study/pages/tree/view/tree_page.dart';
-import 'package:getx_study/resource/assets_image_constant.dart';
+import 'package:cp_driver_app/pages/home/view/home_page.dart';
+import 'package:cp_driver_app/pages/my/view/my_page.dart';
+import 'package:cp_driver_app/pages/tree/view/tabs_page.dart';
+import 'package:cp_driver_app/pages/tree/view/tree_page.dart';
+import 'package:cp_driver_app/resource/assets_image_constant.dart';
 
 // enum MainTagType { home, project, publicNumber, tree, my }
 enum MainTagType { home, tree, my }

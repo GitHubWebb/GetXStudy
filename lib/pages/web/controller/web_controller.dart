@@ -8,14 +8,14 @@ import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:getx_study/base/interface.dart';
-import 'package:getx_study/base/base_request_controller.dart';
-import 'package:getx_study/account_manager/account_manager.dart';
-import 'package:getx_study/pages/web/repository/web_repository.dart';
-import 'package:getx_study/enum/collect_action_type.dart';
-import 'package:getx_study/logger/logger.dart';
-import 'package:getx_study/logger/class_name.dart' as Func;
-import 'package:getx_study/pages/my/controller/my_collect_controller.dart';
+import 'package:cp_driver_app/base/interface.dart';
+import 'package:cp_driver_app/base/base_request_controller.dart';
+import 'package:cp_driver_app/account_manager/account_manager.dart';
+import 'package:cp_driver_app/pages/web/repository/web_repository.dart';
+import 'package:cp_driver_app/enum/collect_action_type.dart';
+import 'package:cp_driver_app/logger/logger.dart';
+import 'package:cp_driver_app/logger/class_name.dart' as Func;
+import 'package:cp_driver_app/pages/my/controller/my_collect_controller.dart';
 
 class WebController extends BaseRequestController<WebRepository, Object?> {
   void Function(CollectActionType, IWebLoadInfo)? collectActionCallback;

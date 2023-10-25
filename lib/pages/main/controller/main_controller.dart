@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:getx_study/logger/logger.dart';
+import 'package:cp_driver_app/logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainController extends GetxController {

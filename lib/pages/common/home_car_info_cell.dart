@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:getx_study/entity/article_info_entity.dart';
-import 'package:getx_study/extension/string_extension.dart';
+import 'package:cp_driver_app/entity/article_info_entity.dart';
+import 'package:cp_driver_app/extension/string_extension.dart';
 
 class HomeCarInfoCell extends StatelessWidget {
   final ArticleInfoDatas _model;

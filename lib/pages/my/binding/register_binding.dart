@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import 'package:getx_study/pages/my/controller/register_controller.dart';
+import 'package:cp_driver_app/pages/my/controller/register_controller.dart';
 
 class RegisterBinding extends Bindings {
   @override

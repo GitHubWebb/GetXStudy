@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'package:getx_study/pages/web/controller/web_controller.dart';
-import 'package:getx_study/pages/web/repository/web_repository.dart';
-import 'package:getx_study/logger/class_name.dart';
+import 'package:cp_driver_app/pages/web/controller/web_controller.dart';
+import 'package:cp_driver_app/pages/web/repository/web_repository.dart';
+import 'package:cp_driver_app/logger/class_name.dart';
 
 class WebBinding extends Bindings {
   @override

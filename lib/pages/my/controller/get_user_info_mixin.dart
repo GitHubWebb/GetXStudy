@@ -1,7 +1,7 @@
-import 'package:getx_study/account_manager/account_manager.dart';
-import 'package:getx_study/base/base_request_controller.dart';
-import 'package:getx_study/entity/account_info_entity.dart';
-import 'package:getx_study/pages/my/repository/my_repository.dart';
+import 'package:cp_driver_app/account_manager/account_manager.dart';
+import 'package:cp_driver_app/base/base_request_controller.dart';
+import 'package:cp_driver_app/entity/account_info_entity.dart';
+import 'package:cp_driver_app/pages/my/repository/my_repository.dart';
 
 mixin GetUserInfoMixin
     on BaseRequestController<MyRepository, AccountInfoEntity> {

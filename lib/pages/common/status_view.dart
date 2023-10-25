@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:getx_study/base/base_controller.dart';
-import 'package:getx_study/enum/response_status.dart';
+import 'package:cp_driver_app/base/base_controller.dart';
+import 'package:cp_driver_app/enum/response_status.dart';
 import 'loading_view.dart';
 import 'error_view.dart';
 import 'empty_view.dart';

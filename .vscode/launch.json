@@ -33,13 +33,13 @@
       "args": ["--flavor", "prod"]
     },
     {
-      "name": "getx_study (profile mode)",
+      "name": "cp_driver_app (profile mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile"
     },
     {
-      "name": "getx_study (release mode)",
+      "name": "cp_driver_app (release mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"

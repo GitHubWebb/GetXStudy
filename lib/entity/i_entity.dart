@@ -1,4 +1,4 @@
-import 'package:getx_study/generated/json/base/json_convert_content.dart';
+import 'package:cp_driver_app/generated/json/base/json_convert_content.dart';
 
 abstract class IEntity<T> {
   T? generateOBJ<O>(Object? json) {

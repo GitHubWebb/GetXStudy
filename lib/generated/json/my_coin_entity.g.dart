@@ -1,5 +1,5 @@
-import 'package:getx_study/generated/json/base/json_convert_content.dart';
-import 'package:getx_study/entity/my_coin_entity.dart';
+import 'package:cp_driver_app/generated/json/base/json_convert_content.dart';
+import 'package:cp_driver_app/entity/my_coin_entity.dart';
 
 MyCoinEntity $MyCoinEntityFromJson(Map<String, dynamic> json) {
 	final MyCoinEntity myCoinEntity = MyCoinEntity();

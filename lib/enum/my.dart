@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getx_study/base/interface.dart';
-import 'package:getx_study/routes/routes.dart';
+import 'package:cp_driver_app/base/interface.dart';
+import 'package:cp_driver_app/routes/routes.dart';
 
 enum My {
   header,

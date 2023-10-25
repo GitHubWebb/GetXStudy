@@ -1,5 +1,5 @@
-import 'package:getx_study/generated/json/base/json_convert_content.dart';
-import 'package:getx_study/entity/account_info_entity.dart';
+import 'package:cp_driver_app/generated/json/base/json_convert_content.dart';
+import 'package:cp_driver_app/entity/account_info_entity.dart';
 
 AccountInfoEntity $AccountInfoEntityFromJson(Map<String, dynamic> json) {
 	final AccountInfoEntity accountInfoEntity = AccountInfoEntity();

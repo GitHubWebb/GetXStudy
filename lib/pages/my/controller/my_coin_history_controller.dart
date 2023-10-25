@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 
-import 'package:getx_study/base/base_refresh_controller.dart';
-import 'package:getx_study/entity/my_coin_history_entity.dart';
-import 'package:getx_study/enum/response_status.dart';
-import 'package:getx_study/enum/scroll_view_action_type.dart';
-import 'package:getx_study/logger/class_name.dart';
-import 'package:getx_study/pages/my/repository/my_coin_history_repository.dart';
+import 'package:cp_driver_app/base/base_refresh_controller.dart';
+import 'package:cp_driver_app/entity/my_coin_history_entity.dart';
+import 'package:cp_driver_app/enum/response_status.dart';
+import 'package:cp_driver_app/enum/scroll_view_action_type.dart';
+import 'package:cp_driver_app/logger/class_name.dart';
+import 'package:cp_driver_app/pages/my/repository/my_coin_history_repository.dart';
 
 class MyCoinHistoryController
     extends BaseRefreshController<MyCoinHistoryRepository, MyCoinHistoryDatas> {
