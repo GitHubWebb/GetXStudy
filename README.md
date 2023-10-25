@@ -1,4 +1,4 @@
-# 使用GetX编写Flutter的wanandroid客户端
+# 使用GetX编写Flutter的麦卡出行客户端
 
 ## 前言
 
