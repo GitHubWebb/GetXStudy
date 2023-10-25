@@ -34,7 +34,7 @@ final loggerPlugin = PrettyDioLogger(
 final networkActivityPlugin = NetworkActivityPlugin(
   networkActivityCallback: (change, options) {
     final result =
-        kWhiteList.where((element) => options.path.contains(element));
+    kWhiteList.where((element) => options.path.contains(element));
     if (result.isNotEmpty) {
       /// 通过当前路由,获取当前页面,main页面会调用登录接口,会loading,这段逻辑优化处理
       /// 同时登出的时候,需要loading,也要进行优化

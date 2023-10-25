@@ -9,6 +9,9 @@ class AssetsImageConstant {
   static const myBarNor = "assets/images/tabs/my_normal@2x.png";
   static const myBarActive = "assets/images/tabs/my_actived@2x.png";
 
+  /// app home header background icons
+  static const homePageSearchIcon = "assets/images/home/ic_search.png";
+
   /// app my header background icons
   static const myPageHeaderIcon = "assets/images/my/my_header_bg.png";
   static const defaultAvatar = "assets/images/my/my_avatar.png";

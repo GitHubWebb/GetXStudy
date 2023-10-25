@@ -1,9 +1,11 @@
+import 'package:cp_driver_app/logger/logger.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
 
 import 'package:cp_driver_app/entity/article_info_entity.dart';
 import 'package:cp_driver_app/extension/string_extension.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeCarInfoCell extends StatelessWidget {
   final ArticleInfoDatas _model;
@@ -24,28 +26,41 @@ class HomeCarInfoCell extends StatelessWidget {
       onTap: () {
         _cellTapCallback(_model);
       },
-      child: Padding(
-        padding:
-            const EdgeInsets.only(top: 10, left: 15, bottom: 10, right: 15),
-        child: _getRow(),
-      ),
+      child: Container(
+          margin:
+              const EdgeInsets.only(top: 15, left: 15, bottom: 0, right: 15),
+          // color: Colors.blue,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            // shape: BoxShape.circle,
+            // 阴影的颜色，模糊半径
+            boxShadow: [BoxShadow(color: Color(0XFFD7D7D7), blurRadius: 1)],
+          ),
+          child: _getRow()),
     );
   }
 
   Widget _imageView() {
+    // TODO 假数据
+    _model.envelopePic =
+        "https://cdn.photographylife.com/wp-content/uploads/2018/11/Moeraki-Boulders-New-Zealand.jpg";
     return Visibility(
-      visible: (_model.envelopePic ??
-              "https://mobje-test-1256532032.cos.ap-beijing.myqcloud.com/mobje-ffs/12652_1696917091781_466765.jpg")
-          .toString()
-          .isNotEmpty,
-      child: SizedBox(
-        width: 60,
-        height: 60,
-        child: CachedNetworkImage(
-          fit: BoxFit.fitHeight,
-          imageUrl: _model.envelopePic.toString(),
-          placeholder: (context, url) => Image.asset(
-            "assets/images/placeholder.png",
+      visible: _model.envelopePic.toString().isNotEmpty,
+      child: Container(
+        margin: const EdgeInsets.only(
+          left: 10,
+          top: 21,
+        ),
+        child: SizedBox(
+          width: 96,
+          height: 65,
+          child: CachedNetworkImage(
+            fit: BoxFit.fitHeight,
+            imageUrl: _model.envelopePic.toString(),
+            placeholder: (context, url) => Image.asset(
+              "assets/images/placeholder.png",
+            ),
           ),
         ),
       ),
@@ -56,14 +71,21 @@ class HomeCarInfoCell extends StatelessWidget {
     return Expanded(
       child: Container(
         margin: const EdgeInsets.only(
-          left: 10,
+          left: 12,
+          top: 17,
+          right: 14,
+          bottom: 14,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              _model.title.toString().replaceHtmlElement,
-              style: const TextStyle(fontSize: 15),
+              _model.superChapterName.toString().replaceHtmlElement,
+              style: const TextStyle(
+                color: Color(0XFF323232),
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -74,17 +96,11 @@ class HomeCarInfoCell extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     Visibility(
-                      visible: (_model.fresh ?? false),
-                      child: const Text(
-                        "最新 ",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                    ),
-                    Visibility(
                       visible: (_model.type != null && _model.type != 0),
                       child: const Text(
-                        "置顶 ",
-                        style: TextStyle(color: Colors.grey),
+                        "车龄：",
+                        style:
+                            TextStyle(color: Color(0XFFB0B0B0), fontSize: 12),
                       ),
                     ),
                     Visibility(
@@ -94,7 +110,8 @@ class HomeCarInfoCell extends StatelessWidget {
                         _model.author ?? _model.shareUser.toString(),
                         overflow: TextOverflow.ellipsis,
                         softWrap: true,
-                        style: const TextStyle(color: Colors.grey),
+                        style:
+                            TextStyle(color: Color(0XFFB0B0B0), fontSize: 12),
                       ),
                     ),
                   ],
@@ -103,10 +120,49 @@ class HomeCarInfoCell extends StatelessWidget {
             ),
             Row(
               children: [
+                Row(
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "¥",
+                      style: const TextStyle(
+                          color: Color(0XFFFF8A00), fontSize: 10),
+                    ),
+                    Text(
+                      "3500/",
+                      style: const TextStyle(
+                          color: Color(0XFFFF8A00), fontSize: 17),
+                    ),
+                    Text(
+                      "月起",
+                      style: const TextStyle(
+                          color: Color(0XFFFF8A00), fontSize: 12),
+                    ),
+                  ],
+                ),
                 const Spacer(),
-                Text(
-                  _model.niceShareDate ?? "",
-                  style: const TextStyle(color: Colors.grey),
+                TextButton(
+                  onPressed: () {
+                    logger.d("点击了");
+                  },
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Color(0XFFFF8A00)),
+                    foregroundColor: MaterialStateProperty.all(Colors.white),
+                    overlayColor: MaterialStateProperty.all(Color(0XFFFF8A00)),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                    //设置按钮的大小
+                    minimumSize: MaterialStateProperty.all(Size(72, 29)),
+                  ),
+                  child: Text(
+                    "查看详情",
+                    style:
+                        const TextStyle(color: Color(0XFFFCFCFC), fontSize: 12),
+                  ),
                 ),
               ],
             )
@@ -120,13 +176,13 @@ class HomeCarInfoCell extends StatelessWidget {
     return Column(
       children: [
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text("首页列表"),
             _imageView(),
             _contentView(),
           ],
         ),
-        const Divider(),
+        // const Divider(color: Colors.red,),
       ],
     );
   }
