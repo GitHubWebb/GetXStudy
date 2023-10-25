@@ -28,6 +28,7 @@ migrate_working_dir/
 .idea
 .flutter-plugins
 .flutter-plugins-dependencies
+pubspec.lock
 .packages
 .pub-cache/
 .pub/

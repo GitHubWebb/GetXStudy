@@ -7,6 +7,7 @@
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 // import 'package:flutter/cupertino.dart';
+import 'package:cp_driver_app/pages/my/widgets/bar_item.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -135,8 +136,7 @@ class MyPage extends GetView<MyController> {
                               ),
                               SizedBox(height: 18.h),
                               const Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   BarItemWidget(
                                     title: "订单",
