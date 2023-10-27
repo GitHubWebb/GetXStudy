@@ -1,3 +1,4 @@
+import 'package:cp_driver_app/pages/common/home/info_cell.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -7,7 +8,6 @@ import 'package:cp_driver_app/pages/common/refresh_header_footer.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'package:cp_driver_app/pages/tree/controller/tab_list_controller.dart';
-import 'package:cp_driver_app/pages/common/info_cell.dart';
 import 'package:cp_driver_app/routes/routes.dart';
 
 class TabListPage extends StatelessWidget {

@@ -102,7 +102,7 @@ Total : 157 files,  7201 codes, 526 comments, 1156 blanks, all 8883 lines
 | [lib/pages/common/countdown_circle.dart](/lib/pages/common/countdown_circle.dart) | Dart | 86 | 8 | 16 | 110 |
 | [lib/pages/common/empty_view.dart](/lib/pages/common/empty_view.dart) | Dart | 29 | 0 | 4 | 33 |
 | [lib/pages/common/error_view.dart](/lib/pages/common/error_view.dart) | Dart | 47 | 0 | 4 | 51 |
-| [lib/pages/common/info_cell.dart](/lib/pages/common/info_cell.dart) | Dart | 120 | 0 | 10 | 130 |
+| [lib/pages/common/info_cell.dart](/lib/pages/common/home/info_cell.dart) | Dart | 120 | 0 | 10 | 130 |
 | [lib/pages/common/keep_alive_wrapper.dart](/lib/pages/common/keep_alive_wrapper.dart) | Dart | 29 | 15 | 6 | 50 |
 | [lib/pages/common/loading_view.dart](/lib/pages/common/loading_view.dart) | Dart | 25 | 0 | 4 | 29 |
 | [lib/pages/common/marquee_label.dart](/lib/pages/common/marquee_label.dart) | Dart | 97 | 4 | 14 | 115 |

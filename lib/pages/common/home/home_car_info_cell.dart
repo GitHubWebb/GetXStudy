@@ -7,6 +7,11 @@ import 'package:cp_driver_app/entity/article_info_entity.dart';
 import 'package:cp_driver_app/extension/string_extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/**
+ * desc  : 车辆列表页面item
+ * author: wangwx
+ * date  : 2023-10-25
+ */
 class HomeCarInfoCell extends StatelessWidget {
   final ArticleInfoDatas _model;
 
@@ -143,7 +148,7 @@ class HomeCarInfoCell extends StatelessWidget {
                 const Spacer(),
                 TextButton(
                   onPressed: () {
-                    logger.d("点击了");
+                    _cellTapCallback(_model);
                   },
                   style: ButtonStyle(
                     backgroundColor:

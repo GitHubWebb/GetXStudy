@@ -1,3 +1,4 @@
+import 'package:cp_driver_app/pages/common/home/info_cell.dart';
 import 'package:cp_driver_app/resource/assets_image_constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:cp_driver_app/env/app_env_config.dart';
 import 'package:cp_driver_app/logger/logger.dart';
-import 'package:cp_driver_app/pages/common/home_car_info_cell.dart';
+import 'package:cp_driver_app/pages/common/home/home_car_info_cell.dart';
 import 'package:cp_driver_app/pages/common/my_list_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:card_swiper/card_swiper.dart';
@@ -15,11 +16,15 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'package:cp_driver_app/extension/string_extension.dart';
 import 'package:cp_driver_app/routes/routes.dart';
-import 'package:cp_driver_app/pages/common/info_cell.dart';
 import 'package:cp_driver_app/pages/common/status_view.dart';
 import 'package:cp_driver_app/pages/home/controller/home_controller.dart';
 import 'package:cp_driver_app/pages/common/refresh_header_footer.dart';
 
+/**
+ * desc  : 首页 - 车辆列表页
+ * author: wangwx
+ * date  : 2023-10-25
+ */
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
 
@@ -153,7 +158,7 @@ class HomePage extends GetView<HomeController> {
                                 }
                               }
                             } else {
-                              Get.toNamed(Routes.web, arguments: model);
+                              Get.toNamed(Routes.carDetail, arguments: model);
                             }
                           },
                         ),
@@ -170,61 +175,4 @@ class HomePage extends GetView<HomeController> {
     );
   }
 
-  /// 使用自定义的MyListView进行布局
-  Widget _myListView() {
-    return MyListView(
-      banner: AspectRatio(
-        aspectRatio: 16.0 / 9.0,
-        child: Swiper(
-          itemBuilder: (BuildContext itemContext, int index) {
-            if (controller.banners.length >= index) {
-              return CachedNetworkImage(
-                fit: BoxFit.fitWidth,
-                imageUrl: controller.banners[index].imagePath,
-                placeholder: (context, url) => Image.asset(
-                  "assets/images/placeholder.png",
-                ),
-              );
-            } else {
-              return Container();
-            }
-          },
-          itemCount: controller.banners.length,
-          pagination: const SwiperPagination(),
-          autoplay: controller.swiperAutoPlay,
-          autoplayDisableOnInteraction: true,
-          onTap: (index) {
-            logger.d(index);
-            Get.toNamed("/web/true", arguments: controller.banners[index]);
-          },
-        ),
-      ),
-      itemBuilder: (context, index) {
-        final model = controller.dataSource[index];
-        return InfoCell(
-          model: model,
-          callback: (_) async {
-            logger.d("点击了");
-            if (model.id == 24742) {
-              if (model.link != null) {
-                final url = Uri.parse(model.link.toString().replaceHtmlElement);
-                if (await canLaunchUrl(url)) {
-                  launchUrl(url, mode: LaunchMode.externalApplication);
-                } else {
-                  Get.snackbar(
-                    "",
-                    "请安装手机QQ",
-                    duration: const Duration(seconds: 1),
-                  );
-                }
-              }
-            } else {
-              Get.toNamed(Routes.web, arguments: model);
-            }
-          },
-        );
-      },
-      itemCount: controller.dataSource.length,
-    );
-  }
 }

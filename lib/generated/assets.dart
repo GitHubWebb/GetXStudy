@@ -13,7 +13,11 @@ class Assets {
   static const String assetsImagesUpgrade = 'assets/images/upgrade.png';
   static const String assetsImagesWelcome1 = 'assets/images/welcome_1.png';
   static const String assetsImagesWelcome2 = 'assets/images/welcome_2.jpg';
+  static const String homeBgCarInfoLine = 'assets/images/home/bg_car_info_line.png';
   static const String homeIcSearch = 'assets/images/home/ic_search.png';
+  static const String homeIconCarMgmt = 'assets/images/home/icon_car_mgmt.png';
+  static const String homeIconCarStock = 'assets/images/home/icon_car_stock.png';
+  static const String homeIconVehicleMileage = 'assets/images/home/icon_vehicle_mileage.png';
   static const String htmlIndex = 'assets/html/index.html';
   static const String imagesIcEye = 'assets/images/ic_eye.png';
   static const String imagesIcHead = 'assets/images/ic_head.jpeg';

@@ -1,6 +1,6 @@
+import 'package:cp_driver_app/pages/common/home/info_cell.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'package:cp_driver_app/pages/common/info_cell.dart';
 import 'package:cp_driver_app/pages/common/refresh_header_footer.dart';
 import 'package:cp_driver_app/pages/common/status_view.dart';
 import 'package:cp_driver_app/pages/home/controller/search_result_controller.dart';

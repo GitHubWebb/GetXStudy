@@ -1,8 +1,8 @@
+import 'package:cp_driver_app/pages/common/home/info_cell.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:cp_driver_app/logger/class_name.dart';
-import 'package:cp_driver_app/pages/common/info_cell.dart';
 import 'package:cp_driver_app/pages/common/status_view.dart';
 import 'package:cp_driver_app/pages/my/controller/my_collect_controller.dart';
 import 'package:cp_driver_app/routes/routes.dart';

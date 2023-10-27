@@ -1,3 +1,4 @@
+import 'package:cp_driver_app/pages/common/home/info_cell.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'package:cp_driver_app/extension/string_extension.dart';
 import 'package:cp_driver_app/routes/routes.dart';
-import 'package:cp_driver_app/pages/common/info_cell.dart';
 import 'package:cp_driver_app/pages/common/status_view.dart';
 import 'package:cp_driver_app/pages/home/controller/home_controller.dart';
 import 'package:cp_driver_app/pages/common/refresh_header_footer.dart';

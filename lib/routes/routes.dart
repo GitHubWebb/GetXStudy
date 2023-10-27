@@ -1,3 +1,4 @@
+import 'package:cp_driver_app/pages/home/view/car_detail_page.dart';
 import 'package:get/get.dart';
 import 'package:cp_driver_app/account_manager/account_binding.dart';
 import 'package:cp_driver_app/example_app/state_mixin_example_page.dart';
@@ -61,6 +62,8 @@ abstract class Routes {
   static const welcome = "/welcome";
 
   static const splash = "/splash";
+
+  static const carDetail = "/home/carDetail";
 
   static const unknown = "/unknown";
 
@@ -159,6 +162,10 @@ abstract class Routes {
       page: () => const WelcomePage(),
     ),
     GetPage(name: splash, page: () => const SplashPage()),
+    GetPage(
+      name: carDetail,
+      page: () => const CarDetailPage(),
+    ),
   ];
 
   static final unknownPage = GetPage(
