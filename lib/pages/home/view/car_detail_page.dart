@@ -35,6 +35,8 @@ class CarDetailPage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    logger.d(Get.arguments.toString());
+
     return Scaffold(
       appBar: SpeakAppBar(
         leading: true,

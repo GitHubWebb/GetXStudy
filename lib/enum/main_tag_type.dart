@@ -1,3 +1,4 @@
+import 'package:cp_driver_app/pages/message/view/msg_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cp_driver_app/enum/tag_type.dart';
@@ -9,7 +10,7 @@ import 'package:cp_driver_app/pages/tree/view/tree_page.dart';
 import 'package:cp_driver_app/resource/assets_image_constant.dart';
 
 // enum MainTagType { home, project, publicNumber, tree, my }
-enum MainTagType { home, tree, my }
+enum MainTagType { home, message, my }
 
 extension MainTagTypeExt on MainTagType {
   Map<String, dynamic> get icon {
@@ -24,7 +25,7 @@ extension MainTagTypeExt on MainTagType {
       //   return Icons.web;
       // case MainTagType.publicNumber:
       //   return Icons.public;
-      case MainTagType.tree:
+      case MainTagType.message:
         // return Icons.list;
         return {
           "normal": AssetsImageConstant.treeBarNor,
@@ -47,7 +48,8 @@ extension MainTagTypeExt on MainTagType {
       //   return "项目";
       // case MainTagType.publicNumber:
       // return "公众号";
-      case MainTagType.tree:
+      // case MainTagType.tree:
+      case MainTagType.message:
         return "消息";
       case MainTagType.my:
         return "我的";
@@ -62,8 +64,10 @@ extension MainTagTypeExt on MainTagType {
       //   return const TabsPage(type: TagType.project);
       // case MainTagType.publicNumber:
       //   return const TabsPage(type: TagType.publicNumber);
-      case MainTagType.tree:
-        return const TreePage();
+      // case MainTagType.tree:
+      //   return const TreePage();
+      case MainTagType.message:
+        return const MessagePage();
       case MainTagType.my:
         return const MyPage();
     }

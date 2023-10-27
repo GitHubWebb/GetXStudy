@@ -63,13 +63,13 @@ class HomeCarDetailCell extends StatelessWidget {
                   )
                 ],
               ),
-              child: _getContent()),
+              child: _getContent(context)),
         ],
       ),
     );
   }
 
-  Widget _getContent() {
+  Widget _getContent(context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -89,8 +89,8 @@ class HomeCarDetailCell extends StatelessWidget {
                   Container(
                     width: 71,
                     height: 5,
-                    decoration: const BoxDecoration(
-                      color: Color(0xFFFF8A00),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.all(Radius.circular(2)),
                     ),
                   )
@@ -113,7 +113,7 @@ class HomeCarDetailCell extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               _leftContentView(),
-              _contentView(),
+              _contentView(context),
             ],
           ),
         ),
@@ -129,7 +129,7 @@ class HomeCarDetailCell extends StatelessWidget {
       margin: const EdgeInsets.only(
         left: 15,
         top: 29,
-        right: 14,
+        right: 33,
         // bottom: 14,
       ),
       child: Text(
@@ -143,7 +143,7 @@ class HomeCarDetailCell extends StatelessWidget {
     );
   }
 
-  Widget _contentView() {
+  Widget _contentView(context) {
     return Expanded(
       child: Container(
         margin: const EdgeInsets.only(
@@ -175,8 +175,8 @@ class HomeCarDetailCell extends StatelessWidget {
                 const Spacer(),
                 Text(
                   "查看详情",
-                  style:
-                      const TextStyle(color: Color(0XFFFF8A00), fontSize: 12),
+                  style: TextStyle(
+                      color: Theme.of(context).primaryColor, fontSize: 12),
                 ),
               ],
             ),
@@ -204,7 +204,7 @@ class HomeCarDetailCell extends StatelessWidget {
                   Text(
                     "提前终止违约金比例 20%",
                     style:
-                    const TextStyle(color: Color(0XFFB0B0B0), fontSize: 9),
+                        const TextStyle(color: Color(0XFFB0B0B0), fontSize: 9),
                   ),
                 ],
               ),

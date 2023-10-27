@@ -1,4 +1,5 @@
 import 'package:cp_driver_app/pages/home/view/car_detail_page.dart';
+import 'package:cp_driver_app/pages/message/binding/msg_binding.dart';
 import 'package:get/get.dart';
 import 'package:cp_driver_app/account_manager/account_binding.dart';
 import 'package:cp_driver_app/example_app/state_mixin_example_page.dart';
@@ -112,6 +113,7 @@ abstract class Routes {
       bindings: [
         MainBinding(),
         HomeBinding(),
+        MsgBinding(),
         TabsBinding(TagType.project),
         TabsBinding(TagType.publicNumber),
         TabsBinding(TagType.tree),

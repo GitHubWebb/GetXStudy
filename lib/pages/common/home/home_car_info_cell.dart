@@ -42,7 +42,7 @@ class HomeCarInfoCell extends StatelessWidget {
             // 阴影的颜色，模糊半径
             boxShadow: [BoxShadow(color: Color(0XFFD7D7D7), blurRadius: 1)],
           ),
-          child: _getRow()),
+          child: _getRow(context)),
     );
   }
 
@@ -72,7 +72,7 @@ class HomeCarInfoCell extends StatelessWidget {
     );
   }
 
-  Widget _contentView() {
+  Widget _contentView(BuildContext context) {
     return Expanded(
       child: Container(
         margin: const EdgeInsets.only(
@@ -130,18 +130,18 @@ class HomeCarInfoCell extends StatelessWidget {
                   children: [
                     Text(
                       "¥",
-                      style: const TextStyle(
-                          color: Color(0XFFFF8A00), fontSize: 10),
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 10),
                     ),
                     Text(
                       "3500/",
-                      style: const TextStyle(
-                          color: Color(0XFFFF8A00), fontSize: 17),
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 17),
                     ),
                     Text(
                       "月起",
-                      style: const TextStyle(
-                          color: Color(0XFFFF8A00), fontSize: 12),
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 12),
                     ),
                   ],
                 ),
@@ -152,9 +152,9 @@ class HomeCarInfoCell extends StatelessWidget {
                   },
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(Color(0XFFFF8A00)),
+                        MaterialStateProperty.all(Theme.of(context).primaryColor),
                     foregroundColor: MaterialStateProperty.all(Colors.white),
-                    overlayColor: MaterialStateProperty.all(Color(0XFFFF8A00)),
+                    overlayColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
                     shape: MaterialStateProperty.all(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14),
@@ -177,14 +177,14 @@ class HomeCarInfoCell extends StatelessWidget {
     );
   }
 
-  Widget _getRow() {
+  Widget _getRow(context) {
     return Column(
       children: [
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             _imageView(),
-            _contentView(),
+            _contentView(context),
           ],
         ),
         // const Divider(color: Colors.red,),
