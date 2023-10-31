@@ -5,32 +5,25 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "dev",
+      "name": "cp_driver_app_sit",
       "request": "launch",
-      "type": "dart",
-      "program": "${workspaceFolder}/lib/env/main_dev.dart",
-      "args": ["--flavor", "dev"]
+      "program": "lib/env/main_sit.dart",
+      "args": ["--flavor", "sit"],
+      "type": "dart"
     },
     {
-      "name": "sit",
+      "name": "cp_driver_app_uat",
       "request": "launch",
-      "type": "dart",
-      "program": "${workspaceFolder}/lib/env/main_sit.dart",
-      "args": ["--flavor", "sit"]
+      "program": "lib/env/main_uat.dart",
+      "args": ["--flavor", "uat"],
+      "type": "dart"
     },
     {
-      "name": "uat",
+      "name": "cp_driver_app_prod",
       "request": "launch",
-      "type": "dart",
-      "program": "${workspaceFolder}/lib/env/main_uat.dart",
-      "args": ["--flavor", "uat"]
-    },
-    {
-      "name": "prod",
-      "request": "launch",
-      "type": "dart",
-      "program": "${workspaceFolder}/lib/env/main_prod.dart",
-      "args": ["--flavor", "prod"]
+      "program": "lib/env/main_prod.dart",
+      "args": ["--flavor", "prod"],
+      "type": "dart"
     },
     {
       "name": "cp_driver_app (profile mode)",
@@ -40,6 +33,26 @@
     },
     {
       "name": "cp_driver_app (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "base_module",
+      "cwd": "base_module",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "base_module (profile mode)",
+      "cwd": "base_module",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "base_module (release mode)",
+      "cwd": "base_module",
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"

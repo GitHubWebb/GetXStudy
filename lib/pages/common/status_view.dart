@@ -1,3 +1,11 @@
+/*
+ * @Author: 米亚流年 miyaliunian@gmail.com
+ * @Date: 2023-10-25 16:50:37
+ * @LastEditors: 米亚流年 miyaliunian@gmail.com
+ * @LastEditTime: 2023-10-27 18:34:03
+ * @FilePath: /cp_driver_app/lib/pages/common/status_view.dart
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

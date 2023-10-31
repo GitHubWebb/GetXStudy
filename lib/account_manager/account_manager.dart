@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cp_driver_app/entity/account_info_entity.dart';
+import 'package:cp_driver_app/utils/storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AccountManager {
@@ -95,6 +96,7 @@ class AccountManager {
   Future<bool> getIsFirstLaunch() async {
     final userDefine = await this.userDefine;
     return userDefine.getBool(kIsFirstLaunch) ?? true;
+    // return Storage().getBool(kIsFirstLaunch);
   }
 
   Future<void> clear() async {

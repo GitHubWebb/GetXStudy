@@ -44,15 +44,12 @@ class MyApp extends StatelessWidget {
           /// 经过初始化的binding,
           initialBinding: AccountBinding(),
 
-          /// 使用toast
-          // builder: EasyLoading.init(),
-          builder: (context, child) {
-            // 使用toast
-            child = EasyLoading.init()(context, child);
+          builder: (context, widget) {
+            widget = EasyLoading.init()(context, widget);
             // return child;
             return MediaQuery(
               data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-              child: child,
+              child: widget,
             );
           },
 
@@ -60,7 +57,7 @@ class MyApp extends StatelessWidget {
           theme: FlexThemeData.light(
             colors: const FlexSchemeColor(
               primary: Color(0xffFF8A00),
-              primaryContainer: Color(0xff9ee29f),
+              primaryContainer: Color(0xffFF8A00),
               secondary: Color(0xff365b37),
               secondaryContainer: Color(0xffaebdaf),
               tertiary: Color(0xff2c7e2e),
@@ -71,7 +68,8 @@ class MyApp extends StatelessWidget {
             surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
             blendLevel: 7,
             subThemesData: const FlexSubThemesData(
-              appBarBackgroundSchemeColor: SchemeColor.error,
+              appBarBackgroundSchemeColor: SchemeColor.background,
+              // appBarBackgroundSchemeColor: Colors.white,
               blendOnLevel: 10,
               blendOnColors: false,
               useTextTheme: true,
@@ -98,7 +96,7 @@ class MyApp extends StatelessWidget {
           darkTheme: FlexThemeData.dark(
             colors: const FlexSchemeColor(
               primary: Color(0xffFF8A00),
-              primaryContainer: Color(0xff274033),
+              primaryContainer: Color(0xffFF8A00),
               secondary: Color(0xff81b39a),
               secondaryContainer: Color(0xff4d6b5c),
               tertiary: Color(0xff88c5a6),

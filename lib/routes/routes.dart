@@ -2,6 +2,10 @@ import 'package:cp_driver_app/pages/car/binding/car_detail_binding.dart';
 
 import '../pages/car/view/car_detail_page.dart';
 import '../pages/message/binding/msg_binding.dart';
+import 'package:cp_driver_app/pages/my/binding/my_order_binding.dart';
+import 'package:cp_driver_app/pages/my/view/my_order_page.dart';
+import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_paid_page.dart';
+import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_signed_page.dart';
 import 'package:get/get.dart';
 import '../account_manager/account_binding.dart';
 import '../example_app/state_mixin_example_page.dart';
@@ -71,6 +75,15 @@ abstract class Routes {
   static const unknown = "/unknown";
 
   static const stateMixinExample = "/stateMixinExample";
+
+  /// 我的订单
+  static const myOrder = "/myOrder";
+
+  /// 我的订单-待签约
+  static const myOrderSigned = "/myOrderSigned";
+
+  /// 我的订单-待签约
+  static const myOrderPaid = "/myOrderPaid";
 
   ///页面合集
   static final routePage = [
@@ -146,6 +159,23 @@ abstract class Routes {
         WebBinding(),
       ],
     ),
+
+    /// ----------- 我的订单 begin
+    GetPage(
+      name: myOrder,
+      page: () => const MyOrderPage(),
+      bindings: [MyOrderBinding()],
+    ),
+    GetPage(
+      name: myOrderSigned,
+      page: () => const OrderDetailSignedPage(),
+    ),
+    GetPage(
+      name: myOrderPaid,
+      page: () => const OrderDetailPaidPage(),
+    ),
+
+    /// ----------- 我的订单 end
     GetPage(
       name: web,
       page: () => const WebPage(),

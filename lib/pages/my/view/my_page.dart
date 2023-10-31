@@ -1,11 +1,3 @@
-/*
- * @Author: 米亚流年 miyaliunian@gmail.com
- * @Date: 2023-10-20 10:14:29
- * @LastEditors: 米亚流年 miyaliunian@gmail.com
- * @LastEditTime: 2023-10-25 06:52:27
- * @FilePath: /GetXStudy/lib/pages/my/view/my_page.dart
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 // import 'package:flutter/cupertino.dart';
 import 'package:cp_driver_app/pages/my/widgets/bar_item.dart';
 import 'package:flutter/material.dart';
@@ -135,25 +127,30 @@ class MyPage extends GetView<MyController> {
                                 ),
                               ),
                               SizedBox(height: 18.h),
-                              const Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   BarItemWidget(
                                     title: "订单",
                                     imgPath: AssetsImageConstant.myOrderIcon,
+                                    onTap: () => {Get.toNamed('myOrder')},
                                   ),
                                   BarItemWidget(
                                     title: "账单",
                                     imgPath: AssetsImageConstant.myBillIcon,
+                                    onTap: () => {print("账单")},
                                   ),
                                   BarItemWidget(
                                     title: "申请换车",
                                     imgPath:
                                         AssetsImageConstant.myCarChangeIcon,
+                                    onTap: () => {print("申请换车")},
                                   ),
                                   BarItemWidget(
                                     title: "设置",
                                     imgPath: AssetsImageConstant.mySettingIcon,
+                                    onTap: () => {print("设置")},
                                   )
                                 ],
                               ),
