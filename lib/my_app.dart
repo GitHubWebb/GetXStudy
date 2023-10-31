@@ -5,11 +5,11 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:cp_driver_app/account_manager/account_binding.dart';
-import 'package:cp_driver_app/env/app_env_config.dart';
-import 'package:cp_driver_app/base/getx_router_observer.dart';
-import 'package:cp_driver_app/extension/theme_data_extension.dart';
-import 'package:cp_driver_app/logger/logger.dart';
+import '../account_manager/account_binding.dart';
+import '../env/app_env_config.dart';
+import '../base/getx_router_observer.dart';
+import '../extension/theme_data_extension.dart';
+import '../logger/logger.dart';
 import 'routes/routes.dart';
 
 class MyApp extends StatelessWidget {

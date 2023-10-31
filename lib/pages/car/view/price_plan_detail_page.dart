@@ -1,36 +1,35 @@
 import 'dart:io';
 
 import 'package:base_module/speak_app_bar.dart';
-import 'package:cp_driver_app/generated/assets.dart';
-import 'package:cp_driver_app/pages/common/home/home_car_detail_cell.dart';
-import 'package:cp_driver_app/resource/assets_image_constant.dart';
+import 'package:cp_driver_app/pages/car/controller/car_detail_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'package:get/get.dart';
-import 'package:cp_driver_app/env/app_env_config.dart';
-import 'package:cp_driver_app/logger/logger.dart';
-import 'package:cp_driver_app/pages/common/home/home_car_info_cell.dart';
-import 'package:cp_driver_app/pages/common/my_list_view.dart';
+import '../../../env/app_env_config.dart';
+import '../../../generated/assets.dart';
+import '../../../logger/logger.dart';
+import '../../../pages/common/home/home_car_info_cell.dart';
+import '../../../pages/common/my_list_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:cp_driver_app/extension/string_extension.dart';
-import 'package:cp_driver_app/routes/routes.dart';
-import 'package:cp_driver_app/pages/common/status_view.dart';
-import 'package:cp_driver_app/pages/home/controller/home_controller.dart';
-import 'package:cp_driver_app/pages/common/refresh_header_footer.dart';
+import '../../../extension/string_extension.dart';
+import '../../../routes/routes.dart';
+import '../../../pages/common/status_view.dart';
+import '../../../pages/common/refresh_header_footer.dart';
+import '../../common/home/home_car_detail_cell.dart';
 
 /**
  * desc  : 车辆详情页面
  * author: wangwx
  * date  : 2023-10-26
  */
-class CarDetailPage extends GetView<HomeController> {
+class CarDetailPage extends GetView<CarDetailController> {
   const CarDetailPage({Key? key}) : super(key: key);
 
   @override
@@ -44,7 +43,7 @@ class CarDetailPage extends GetView<HomeController> {
         backIconColor: const Color(0xFF525252),
         backgroundColor: const Color(0xF9F9F9),
       ),
-      body: StatusView<HomeController>(
+      body: StatusView<CarDetailController>(
         contentBuilder: (controller) {
           return Container(
             color: const Color(0XFFF9F9F9),
@@ -64,7 +63,7 @@ class CarDetailPage extends GetView<HomeController> {
 
   //<editor-fold desc="顶部Banner">
   /** 顶部Banner */
-  Widget buildHeadBannerSliverAdapter(HomeController controller) {
+  Widget buildHeadBannerSliverAdapter(CarDetailController controller) {
     return SliverToBoxAdapter(
       child: Container(
         color: Colors.white,
@@ -108,7 +107,7 @@ class CarDetailPage extends GetView<HomeController> {
 
   //<editor-fold desc="车辆信息金刚区">
   /** 车辆信息金刚区 */
-  Widget buildCardInfoKongSliver(HomeController controller) {
+  Widget buildCardInfoKongSliver(CarDetailController controller) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (content, index) {
@@ -233,7 +232,7 @@ class CarDetailPage extends GetView<HomeController> {
 
   //<editor-fold desc="底部 详细信息列表">
   /** 底部 详细信息列表 */
-  Widget buildCardDetailItemSliverList(HomeController controller) {
+  Widget buildCardDetailItemSliverList(CarDetailController controller) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (content, index) {

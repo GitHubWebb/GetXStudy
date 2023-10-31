@@ -6,7 +6,7 @@ import '../../../entity/page_entity.dart';
 import '../../../http_util/api.dart';
 import '../../../http_util/request.dart' as http;
 
-class MsgRepository extends IRepository {
+class CarDetailRepository extends IRepository {
   Future<BaseEntity<List<BannerEntity>>> getBanner() =>
       http.Request.get(api: Api.getBanner);
 

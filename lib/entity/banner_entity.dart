@@ -1,6 +1,6 @@
-import 'package:cp_driver_app/base/interface.dart';
-import 'package:cp_driver_app/generated/json/base/json_field.dart';
-import 'package:cp_driver_app/generated/json/banner_entity.g.dart';
+import '../base/interface.dart';
+import '../generated/json/base/json_field.dart';
+import '../generated/json/banner_entity.g.dart';
 import 'dart:convert';
 
 @JsonSerializable()

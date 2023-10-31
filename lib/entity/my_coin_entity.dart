@@ -1,5 +1,5 @@
-import 'package:cp_driver_app/generated/json/base/json_field.dart';
-import 'package:cp_driver_app/generated/json/my_coin_entity.g.dart';
+import '../generated/json/base/json_field.dart';
+import '../generated/json/my_coin_entity.g.dart';
 import 'dart:convert';
 
 @JsonSerializable()

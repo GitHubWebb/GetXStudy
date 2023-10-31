@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-
 import 'package:cp_driver_app/entity/article_info_entity.dart';
+import 'package:flutter/material.dart';
 
 /**
  * desc  : 消息页面item

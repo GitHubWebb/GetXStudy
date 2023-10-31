@@ -1,13 +1,13 @@
-import 'package:cp_driver_app/pages/message/view/msg_page.dart';
+import '../pages/message/view/msg_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:cp_driver_app/enum/tag_type.dart';
+import '../enum/tag_type.dart';
 
-import 'package:cp_driver_app/pages/home/view/home_page.dart';
-import 'package:cp_driver_app/pages/my/view/my_page.dart';
-import 'package:cp_driver_app/pages/tree/view/tabs_page.dart';
-import 'package:cp_driver_app/pages/tree/view/tree_page.dart';
-import 'package:cp_driver_app/resource/assets_image_constant.dart';
+import '../pages/home/view/home_page.dart';
+import '../pages/my/view/my_page.dart';
+import '../pages/tree/view/tabs_page.dart';
+import '../pages/tree/view/tree_page.dart';
+import '../resource/assets_image_constant.dart';
 
 // enum MainTagType { home, project, publicNumber, tree, my }
 enum MainTagType { home, message, my }

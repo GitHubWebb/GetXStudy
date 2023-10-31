@@ -4,12 +4,12 @@ import 'package:flutter/services.dart';
 
 import 'package:webview_flutter_jsbridge/webview_flutter_jsbridge.dart';
 
-import 'package:cp_driver_app/account_manager/account_manager.dart';
-import 'package:cp_driver_app/example_app/stream_app.dart';
-import 'package:cp_driver_app/my_app.dart';
-import 'package:cp_driver_app/example_app/get_x_app.dart';
-import 'package:cp_driver_app/example_app/rx_dart_app.dart';
-import 'package:cp_driver_app/example_app/h5_js_channel_app.dart';
+import '../account_manager/account_manager.dart';
+import '../example_app/stream_app.dart';
+import '../my_app.dart';
+import '../example_app/get_x_app.dart';
+import '../example_app/rx_dart_app.dart';
+import '../example_app/h5_js_channel_app.dart';
 
 void main() => run();
 

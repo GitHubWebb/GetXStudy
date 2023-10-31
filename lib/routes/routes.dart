@@ -1,37 +1,39 @@
-import 'package:cp_driver_app/pages/home/view/car_detail_page.dart';
-import 'package:cp_driver_app/pages/message/binding/msg_binding.dart';
+import 'package:cp_driver_app/pages/car/binding/car_detail_binding.dart';
+
+import '../pages/car/view/car_detail_page.dart';
+import '../pages/message/binding/msg_binding.dart';
 import 'package:get/get.dart';
-import 'package:cp_driver_app/account_manager/account_binding.dart';
-import 'package:cp_driver_app/example_app/state_mixin_example_page.dart';
-import 'package:cp_driver_app/enum/tag_type.dart';
-import 'package:cp_driver_app/pages/coin_rank/bindings/coin_rank_binding.dart';
-import 'package:cp_driver_app/pages/coin_rank/view/coin_rank_page.dart';
-import 'package:cp_driver_app/pages/common/unknown_page.dart';
-import 'package:cp_driver_app/pages/home/binding/home_binding.dart';
-import 'package:cp_driver_app/pages/home/binding/hot_key_binding.dart';
-import 'package:cp_driver_app/pages/home/view/hot_key_page.dart';
-import 'package:cp_driver_app/pages/launch/splash_page.dart';
-import 'package:cp_driver_app/pages/launch/welcome_page.dart';
-import 'package:cp_driver_app/pages/main/bindings/main_binding.dart';
-import 'package:cp_driver_app/pages/main/view/main_page.dart';
-import 'package:cp_driver_app/pages/my/binding/login_binding.dart';
-import 'package:cp_driver_app/pages/my/binding/my_binding.dart';
-import 'package:cp_driver_app/pages/my/binding/my_coin_history_binding.dart';
-import 'package:cp_driver_app/pages/my/binding/my_collect_binding.dart';
-import 'package:cp_driver_app/pages/my/binding/register_binding.dart';
-import 'package:cp_driver_app/pages/my/view/login_page.dart';
-import 'package:cp_driver_app/pages/my/view/my_coin_history_page.dart';
-import 'package:cp_driver_app/pages/my/view/my_collect_page.dart';
-import 'package:cp_driver_app/pages/my/view/register_page.dart';
-import 'package:cp_driver_app/pages/home/binding/search_result_binding.dart';
-import 'package:cp_driver_app/pages/home/view/search_result_page.dart';
-import 'package:cp_driver_app/pages/tree/bindings/tabs_binding.dart';
-import 'package:cp_driver_app/pages/tree/view/tabs_page.dart';
-import 'package:cp_driver_app/pages/tree/view/tree_page.dart';
-import 'package:cp_driver_app/pages/web/binding/web_binding.dart';
-import 'package:cp_driver_app/pages/web/view/web_page.dart';
-import 'package:cp_driver_app/routes/login_middleware.dart';
-import 'package:cp_driver_app/routes/web_middleware.dart';
+import '../account_manager/account_binding.dart';
+import '../example_app/state_mixin_example_page.dart';
+import '../enum/tag_type.dart';
+import '../pages/coin_rank/bindings/coin_rank_binding.dart';
+import '../pages/coin_rank/view/coin_rank_page.dart';
+import '../pages/common/unknown_page.dart';
+import '../pages/home/binding/home_binding.dart';
+import '../pages/home/binding/hot_key_binding.dart';
+import '../pages/home/view/hot_key_page.dart';
+import '../pages/launch/splash_page.dart';
+import '../pages/launch/welcome_page.dart';
+import '../pages/main/bindings/main_binding.dart';
+import '../pages/main/view/main_page.dart';
+import '../pages/my/binding/login_binding.dart';
+import '../pages/my/binding/my_binding.dart';
+import '../pages/my/binding/my_coin_history_binding.dart';
+import '../pages/my/binding/my_collect_binding.dart';
+import '../pages/my/binding/register_binding.dart';
+import '../pages/my/view/login_page.dart';
+import '../pages/my/view/my_coin_history_page.dart';
+import '../pages/my/view/my_collect_page.dart';
+import '../pages/my/view/register_page.dart';
+import '../pages/home/binding/search_result_binding.dart';
+import '../pages/home/view/search_result_page.dart';
+import '../pages/tree/bindings/tabs_binding.dart';
+import '../pages/tree/view/tabs_page.dart';
+import '../pages/tree/view/tree_page.dart';
+import '../pages/web/binding/web_binding.dart';
+import '../pages/web/view/web_page.dart';
+import '../routes/login_middleware.dart';
+import '../routes/web_middleware.dart';
 
 abstract class Routes {
   Routes._();
@@ -167,6 +169,7 @@ abstract class Routes {
     GetPage(
       name: carDetail,
       page: () => const CarDetailPage(),
+      binding: CarDetailBinding(),
     ),
   ];
 

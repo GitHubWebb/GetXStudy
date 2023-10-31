@@ -1,8 +1,8 @@
-import 'package:cp_driver_app/entity/i_entity.dart';
-import 'package:cp_driver_app/entity/page_entity.dart';
-import 'package:cp_driver_app/enum/response_status.dart';
+import '../entity/i_entity.dart';
+import '../entity/page_entity.dart';
+import '../enum/response_status.dart';
 
-import 'package:cp_driver_app/resource/constant.dart';
+import '../resource/constant.dart';
 
 class BaseEntity<T> extends IEntity<T> {
   BaseEntity(this.errorCode, this.errorMsg, this.data);

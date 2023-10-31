@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 
-import "package:cp_driver_app/base/base_controller.dart";
-import 'package:cp_driver_app/base/interface.dart';
-import 'package:cp_driver_app/entity/base_entity.dart';
+import "../base/base_controller.dart";
+import '../base/interface.dart';
+import '../entity/base_entity.dart';
 
 abstract class BaseRequestController<R extends IRepository, T> extends BaseController {
   late R request;

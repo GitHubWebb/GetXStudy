@@ -1,9 +1,9 @@
-import 'package:cp_driver_app/generated/json/base/json_convert_content.dart';
+import '../generated/json/base/json_convert_content.dart';
 
-import 'package:cp_driver_app/entity/article_info_entity.dart';
-import 'package:cp_driver_app/entity/coin_rank_entity.dart';
-import 'package:cp_driver_app/entity/my_coin_history_entity.dart';
-import 'package:cp_driver_app/entity/page_entity.dart';
+import '../entity/article_info_entity.dart';
+import '../entity/coin_rank_entity.dart';
+import '../entity/my_coin_history_entity.dart';
+import '../entity/page_entity.dart';
 
 extension MoreGenerics on JsonConvert {
   /// 解决泛型里面包含泛型的转换问题

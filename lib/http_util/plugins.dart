@@ -5,9 +5,9 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
-import 'package:cp_driver_app/http_util/network_activity_plugin.dart';
-import 'package:cp_driver_app/resource/constant.dart';
-import 'package:cp_driver_app/routes/routes.dart';
+import '../http_util/network_activity_plugin.dart';
+import '../resource/constant.dart';
+import '../routes/routes.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'api.dart';

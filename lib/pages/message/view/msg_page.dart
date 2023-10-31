@@ -1,19 +1,19 @@
 import 'package:base_module/speak_app_bar.dart';
-import 'package:cp_driver_app/pages/common/home/msg_detail_cell.dart';
+import 'package:cp_driver_app/extension/string_extension.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
-import 'package:cp_driver_app/logger/logger.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:cp_driver_app/extension/string_extension.dart';
-import 'package:cp_driver_app/routes/routes.dart';
-import 'package:cp_driver_app/pages/common/status_view.dart';
-import 'package:cp_driver_app/pages/message/controller/msg_controller.dart';
-import 'package:cp_driver_app/pages/common/refresh_header_footer.dart';
+import '../../../logger/logger.dart';
+import '../../../routes/routes.dart';
+import '../../../pages/common/status_view.dart';
+import '../../../pages/message/controller/msg_controller.dart';
+import '../../../pages/common/refresh_header_footer.dart';
+import '../../common/home/msg_detail_cell.dart';
 
 /**
  * desc  : 消息页面

@@ -10,10 +10,10 @@ import '../../../enum/scroll_view_action_type.dart';
 import '../../../logger/class_name.dart';
 import '../../../logger/logger.dart';
 import '../../my/controller/my_controller.dart';
-import '../repository/msg_repository.dart';
+import '../repository/car_detail_repository.dart';
 
-class MsgController
-    extends BaseRefreshController<MsgRepository, ArticleInfoDatas> {
+class CarDetailController
+    extends BaseRefreshController<CarDetailRepository, ArticleInfoDatas> {
   var banners = [];
 
   var swiperAutoPlay = false;
@@ -21,9 +21,9 @@ class MsgController
   @override
   void onInit() {
     super.onInit();
-    initPage = Get.find<int>(tag: className(MsgController));
+    initPage = Get.find<int>(tag: className(CarDetailController));
     page = initPage;
-    refreshController = Get.find(tag: className(MsgController));
+    refreshController = Get.find(tag: className(CarDetailController));
 
     final myController = Get.find<MyController>();
     myController.autoLogin();

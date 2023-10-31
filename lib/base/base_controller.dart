@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
-import 'package:cp_driver_app/account_manager/account_manager.dart';
-import 'package:cp_driver_app/base/interface.dart';
-import 'package:cp_driver_app/enum/response_status.dart';
-import 'package:cp_driver_app/routes/routes.dart';
+import '../account_manager/account_manager.dart';
+import '../base/interface.dart';
+import '../enum/response_status.dart';
+import '../routes/routes.dart';
 
 abstract class BaseController extends GetxController
     implements IRetry, IEmptyTap {

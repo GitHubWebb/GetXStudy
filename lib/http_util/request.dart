@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'http_util.dart';
 
-import 'package:cp_driver_app/entity/base_entity.dart';
+import '../entity/base_entity.dart';
 
 extension Request on HttpUtils {
   /// Get请求直接转模型

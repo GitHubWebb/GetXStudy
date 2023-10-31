@@ -1,14 +1,14 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:cp_driver_app/account_manager/account_manager.dart';
-import 'package:cp_driver_app/http_util/http_util.dart';
+import '../account_manager/account_manager.dart';
+import '../http_util/http_util.dart';
 
-import 'package:cp_driver_app/http_util/api.dart';
-import 'package:cp_driver_app/entity/base_entity.dart';
-import 'package:cp_driver_app/entity/banner_entity.dart';
-import 'package:cp_driver_app/entity/article_info_entity.dart';
-import 'package:cp_driver_app/entity/page_entity.dart';
+import '../http_util/api.dart';
+import '../entity/base_entity.dart';
+import '../entity/banner_entity.dart';
+import '../entity/article_info_entity.dart';
+import '../entity/page_entity.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'request_client.g.dart';
