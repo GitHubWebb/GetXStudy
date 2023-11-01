@@ -1,5 +1,6 @@
 import 'package:cp_driver_app/entity/article_info_entity.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /**
  * desc  : 消息页面item
@@ -24,7 +25,7 @@ class MsgDetailCell extends StatelessWidget {
       : _position = position,
         _itemCount = itemCount,
         _isFirstPosition = (position == 0),
-        _isLastPosition = (position == itemCount - 1),
+        _isLastPosition = (position == (itemCount - 1)),
         _model = model,
         _cellTapCallback = callback,
         super(key: key);
@@ -81,13 +82,13 @@ class MsgDetailCell extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.center,
             Text(
               "尊敬的用户：",
-              style: const TextStyle(color: Color(0XFF1B1B1B), fontSize: 10),
+              style: TextStyle(color: Color(0XFF1B1B1B), fontSize: 10.sp),
             ),
             Container(
               margin: EdgeInsets.only(left: 1, top: 9),
               child: Text(
                 "【第一期租金】应收3700.00元，已收到1240.00元，剩余2460.00元，请及时缴纳剩余租金。",
-                style: const TextStyle(color: Color(0XFF1B1B1B), fontSize: 14),
+                style: TextStyle(color: Color(0XFF1B1B1B), fontSize: 14.sp),
               ),
             ),
             Container(
@@ -97,7 +98,7 @@ class MsgDetailCell extends StatelessWidget {
                   Spacer(),
                   Text(
                     "2023-09-21 10::35:25",
-                    style: const TextStyle(color: Color(0XFF1B1B1B), fontSize: 10),
+                    style: TextStyle(color: Color(0XFF1B1B1B), fontSize: 10.sp),
                   ),
                 ],
               ),

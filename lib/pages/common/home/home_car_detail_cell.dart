@@ -30,7 +30,7 @@ class HomeCarDetailCell extends StatelessWidget {
       : _position = position,
         _itemCount = itemCount,
         _isFirstPosition = (position == 0),
-        _isLastPosition = (position == itemCount - 1),
+        _isLastPosition = (position == (itemCount - 1)),
         _model = model,
         _cellTapCallback = callback,
         super(key: key);
@@ -82,7 +82,7 @@ class HomeCarDetailCell extends StatelessWidget {
                   Text(
                     "选择价格方案",
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       color: Color(0xFF323232),
                     ),
                   ),
@@ -134,9 +134,9 @@ class HomeCarDetailCell extends StatelessWidget {
       ),
       child: Text(
         "${_position + 1}期",
-        style: const TextStyle(
+        style: TextStyle(
           color: Color(0XFF323232),
-          fontSize: 14,
+          fontSize: 14.sp,
           // fontWeight: FontWeight.bold,
         ),
       ),
@@ -160,23 +160,23 @@ class HomeCarDetailCell extends StatelessWidget {
                 Text(
                   "¥",
                   style:
-                      const TextStyle(color: Color(0XFF323232), fontSize: 10),
+                      TextStyle(color: Color(0XFF323232), fontSize: 10.sp),
                 ),
                 Text(
                   "3700.00",
                   style:
-                      const TextStyle(color: Color(0XFF323232), fontSize: 14),
+                      TextStyle(color: Color(0XFF323232), fontSize: 14.sp),
                 ),
                 Text(
                   "/月",
                   style:
-                      const TextStyle(color: Color(0XFF323232), fontSize: 12),
+                      TextStyle(color: Color(0XFF323232), fontSize: 12.sp),
                 ),
                 const Spacer(),
                 Text(
                   "查看详情",
                   style: TextStyle(
-                      color: Theme.of(context).primaryColor, fontSize: 12),
+                      color: Theme.of(context).primaryColor, fontSize: 12.sp),
                 ),
               ],
             ),
@@ -193,12 +193,12 @@ class HomeCarDetailCell extends StatelessWidget {
                   Text(
                     "10000.00 ",
                     style:
-                        const TextStyle(color: Color(0XFF323232), fontSize: 14),
+                        TextStyle(color: Color(0XFF323232), fontSize: 14.sp),
                   ),
                   Text(
                     "押金",
                     style:
-                        const TextStyle(color: Color(0XFF323232), fontSize: 12),
+                        TextStyle(color: Color(0XFF323232), fontSize: 12.sp),
                   ),
                   const Spacer(),
                   Text(

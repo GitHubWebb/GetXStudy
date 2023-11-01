@@ -17,20 +17,22 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../extension/string_extension.dart';
 import '../../../routes/routes.dart';
 import '../../../pages/common/status_view.dart';
 import '../../../pages/common/refresh_header_footer.dart';
-import '../../common/home/home_car_detail_cell.dart';
+import '../../common/home/home_car_price_plan_detail_cell.dart';
+import '../controller/price_plan_detail_controller.dart';
 
 /**
- * desc  : 车辆详情页面
+ * desc  : 价格方案详情页面
  * author: wangwx
- * date  : 2023-10-26
+ * date  : 2023-10-31
  */
-class CarDetailPage extends GetView<CarDetailController> {
-  const CarDetailPage({Key? key}) : super(key: key);
+class PricePlanDetailPage extends GetView<PricePlanDetailController> {
+  const PricePlanDetailPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,21 +41,23 @@ class CarDetailPage extends GetView<CarDetailController> {
     return Scaffold(
       appBar: SpeakAppBar(
         leading: true,
-        title: "车辆详情",
+        title: "价格方案详情",
         backIconColor: const Color(0xFF525252),
         backgroundColor: const Color(0xF9F9F9),
       ),
-      body: StatusView<CarDetailController>(
+      body: StatusView<PricePlanDetailController>(
         contentBuilder: (controller) {
           return Container(
             color: const Color(0XFFF9F9F9),
-            child: CustomScrollView(
+            child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
-              slivers: <Widget>[
-                buildHeadBannerSliverAdapter(controller),
-                buildCardInfoKongSliver(controller),
-                buildCardDetailItemSliverList(controller),
-              ],
+              child: Column(
+                children: <Widget>[
+                  buildCardInfo(),
+                  buildPricePlanContentItemContainer(context, controller),
+                  buildSubmitBtn(context),
+                ],
+              ),
             ),
           );
         },
@@ -61,63 +65,19 @@ class CarDetailPage extends GetView<CarDetailController> {
     );
   }
 
-  //<editor-fold desc="顶部Banner">
-  /** 顶部Banner */
-  Widget buildHeadBannerSliverAdapter(CarDetailController controller) {
-    return SliverToBoxAdapter(
-      child: Container(
-        color: Colors.white,
-        padding: const EdgeInsets.only(
-          left: 43,
-          top: 12,
-          right: 54,
-          // bottom: 12,
-        ),
-        child: AspectRatio(
-          aspectRatio: 26 / 11,
-          child: Swiper(
-            itemBuilder: (BuildContext itemContext, int index) {
-              if (controller.banners.length >= index) {
-                return CachedNetworkImage(
-                  fit: BoxFit.fitWidth,
-                  imageUrl: controller.banners[index].imagePath,
-                  placeholder: (context, url) => Image.asset(
-                    "assets/images/placeholder.png",
-                  ),
-                );
-              } else {
-                return Container();
-              }
-            },
-            itemCount: controller.banners.length,
-            pagination: const SwiperPagination(),
-            autoplay: controller.swiperAutoPlay,
-            autoplayDisableOnInteraction: true,
-            onTap: (index) {
-              logger.d(index);
-              Get.toNamed("/web/true", arguments: controller.banners[index]);
-            },
-          ),
-        ),
-      ),
-    );
-  }
-
-  //</editor-fold>
-
-  //<editor-fold desc="车辆信息金刚区">
+  //<editor-fold desc="车辆信息">
   /** 车辆信息金刚区 */
-  Widget buildCardInfoKongSliver(CarDetailController controller) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (content, index) {
-          final model = controller.dataSource[index];
+  Widget buildCardInfo() {
+    return ListView.builder(
+        shrinkWrap: true,
+        itemCount: 1,
+        itemBuilder: (context, index) {
           return Container(
             margin:
-                const EdgeInsets.only(left: 10, top: 12, right: 10, bottom: 14),
+                const EdgeInsets.only(left: 9, top: 2, right: 10, bottom: 13),
             decoration: const BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(5)),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
               // shape: BoxShape.circle,
               // 阴影的颜色，模糊半径
               boxShadow: [BoxShadow(color: Color(0XFFD7D7D7), blurRadius: 1)],
@@ -125,96 +85,141 @@ class CarDetailPage extends GetView<CarDetailController> {
             child: Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 11),
+                  margin: const EdgeInsets.only(top: 14),
                   child: Text(
                     "奇瑞-艾瑞泽E-2021款 智行版",
                     style:
-                        TextStyle(fontSize: 12, color: const Color(0xFF323232)),
+                        TextStyle(fontSize: 14.sp, color: const Color(0xFF323232)),
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(left: 0, top: 4, right: 0),
-                  child: Image.asset(
-                    Assets.homeBgCarInfoLine,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(top: 13, bottom: 22),
-                      child: Column(
+                      margin: const EdgeInsets.only(left: 14, top: 13),
+                      child: Row(
                         children: [
-                          Container(
-                            margin: const EdgeInsets.only(bottom: 7),
-                            child: Image.asset(
-                              Assets.homeIconCarMgmt,
-                              width: 20,
-                              height: 19,
-                            ),
+                          Text(
+                            "车龄：",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
                           ),
                           Text(
                             "12-24个月",
                             style: TextStyle(
-                                color: Color(0xFF191818), fontSize: 12),
-                          ),
-                          Text(
-                            "车龄",
-                            style: TextStyle(
-                                color: Color(0xFFB0B0B0), fontSize: 12),
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
                           ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(
-                          left: 51, top: 17, right: 56, bottom: 22),
-                      child: Column(
+                      margin: const EdgeInsets.only(left: 14, top: 14),
+                      child: Row(
                         children: [
-                          Container(
-                            margin: const EdgeInsets.only(bottom: 4),
-                            child: Image.asset(
-                              Assets.homeIconVehicleMileage,
-                              width: 18,
-                              height: 18,
-                            ),
+                          Text(
+                            "里程（公里）：",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
                           ),
                           Text(
                             "10万公里以内",
                             style: TextStyle(
-                                color: Color(0xFF191818), fontSize: 12),
-                          ),
-                          Text(
-                            "里程（公里）",
-                            style: TextStyle(
-                                color: Color(0xFFB0B0B0), fontSize: 12),
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
                           ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(top: 17, bottom: 22),
-                      child: Column(
+                      margin: const EdgeInsets.only(left: 14, top: 15),
+                      child: Row(
                         children: [
-                          Container(
-                            margin: const EdgeInsets.only(bottom: 5),
-                            child: Image.asset(
-                              Assets.homeIconCarStock,
-                              width: 20,
-                              height: 16,
-                            ),
+                          Text(
+                            "提车周期：",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
                           ),
                           Text(
                             "现车",
                             style: TextStyle(
-                                color: Color(0xFF191818), fontSize: 12),
-                          ),
-                          Text(
-                            "提车周期",
-                            style: TextStyle(
-                                color: Color(0xFFB0B0B0), fontSize: 12),
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
                           ),
                         ],
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 14, top: 12),
+                      child: Row(
+                        children: [
+                          Text(
+                            "租期：",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
+                          ),
+                          Text(
+                            "3期",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 14, top: 14),
+                      child: Row(
+                        children: [
+                          Text(
+                            "租金：",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
+                          ),
+                          Text(
+                            "￥3700.00/月",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 14, top: 12),
+                      child: Row(
+                        children: [
+                          Text(
+                            "押金：",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
+                          ),
+                          Text(
+                            "￥10000.00押金",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 14, top: 13),
+                      child: Row(
+                        children: [
+                          Text(
+                            "门店：",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
+                          ),
+                          Text(
+                            "安徽麦卡出行汽车有限公司",
+                            style: TextStyle(
+                                color: Color(0xFF6D6D6D), fontSize: 12.sp),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin:
+                          const EdgeInsets.only(left: 15, top: 9, bottom: 10),
+                      child: Text(
+                        "提前终止违约金比例20%",
+                        style: TextStyle(color: Color(0xFFB0B0B0), fontSize: 9),
                       ),
                     ),
                   ],
@@ -222,51 +227,121 @@ class CarDetailPage extends GetView<CarDetailController> {
               ],
             ),
           );
-        },
-        childCount: 1,
-      ),
-    );
+        });
   }
 
 //</editor-fold>
 
   //<editor-fold desc="底部 详细信息列表">
-  /** 底部 详细信息列表 */
-  Widget buildCardDetailItemSliverList(CarDetailController controller) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (content, index) {
-          final model = controller.dataSource[index];
-          return Container(
-            padding: const EdgeInsets.all(0.0),
-            child: HomeCarDetailCell(
-              position: index,
-              itemCount: controller.dataSource.length,
-              model: model,
-              callback: (_) async {
-                logger.d("点击了");
-                if (model.id == 24742) {
-                  if (model.link != null) {
-                    final url =
-                        Uri.parse(model.link.toString().replaceHtmlElement);
-                    if (await canLaunchUrl(url)) {
-                      launchUrl(url, mode: LaunchMode.externalApplication);
-                    } else {
-                      Get.snackbar(
-                        "",
-                        "请安装手机QQ",
-                        duration: const Duration(seconds: 1),
-                      );
-                    }
-                  }
-                } else {
-                  Get.toNamed(Routes.myCollect, arguments: model);
-                }
-              },
+  /** 底部 内容 详细信息列表 */
+  Container buildPricePlanContentItemContainer(
+      BuildContext context, PricePlanDetailController controller) {
+    return Container(
+        margin: EdgeInsets.only(left: 9, right: 11, bottom: 0),
+        padding: EdgeInsets.only(left: 14, right: 13, bottom: 0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          // shape: BoxShape.circle,
+          // 阴影的颜色，模糊半径
+          boxShadow: [
+            BoxShadow(
+              color: Color(0xFFD7D7D7),
+              blurRadius: 1,
+            )
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: const EdgeInsets.only(left: 1, top: 11, bottom: 9),
+              child: Column(
+                children: [
+                  Text(
+                    "基础服务",
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      color: Color(0xFF323232),
+                    ),
+                  ),
+                  Container(
+                    width: 46,
+                    height: 5,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).primaryColor,
+                      borderRadius: BorderRadius.all(Radius.circular(2)),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          );
+            buildPricePlanDetailItemList(controller),
+          ],
+        ));
+  }
+
+  /** 底部 详细信息列表 */
+  Widget buildPricePlanDetailItemList(PricePlanDetailController controller) {
+    return ListView.builder(
+        shrinkWrap: true,
+        itemCount: (controller.data ?? []).isEmpty
+            ? 0
+            : (controller.data ?? []).length,
+        itemBuilder: (context, index) {
+          var modelList = controller.data ?? [];
+          if (modelList.isEmpty)
+            return Container();
+          else {
+            final model = modelList[index];
+            return Container(
+              padding: const EdgeInsets.all(0.0),
+              child: PricePlanDetailCell(
+                position: index,
+                // itemCount: controller.dataSource.length,
+                itemCount: modelList.length,
+                model: model,
+                callback: (_) async {
+                  logger.d("点击了");
+                  Get.toNamed(Routes.myCollect, arguments: model);
+                },
+              ),
+            );
+          }
+        });
+  }
+
+//</editor-fold>
+
+  //<editor-fold desc="立即支付定金">
+  /** 立即支付定金 */
+  Widget buildSubmitBtn(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.only(left: 10, top: 14, right: 10, bottom: 13),
+      child: TextButton(
+        onPressed: () {
+          Get.toNamed(Routes.myCollect, arguments: "_model");
         },
-        childCount: controller.dataSource.length,
+        style: ButtonStyle(
+          backgroundColor:
+              MaterialStateProperty.all(Theme.of(context).primaryColor),
+          foregroundColor: MaterialStateProperty.all(Colors.white),
+          overlayColor:
+              MaterialStateProperty.all(Theme.of(context).primaryColor),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(14),
+            ),
+          ),
+
+          //设置按钮的大小
+          minimumSize: MaterialStateProperty.all(Size(72, 29)),
+        ),
+        child: Text(
+          "立即支付定金",
+          style: TextStyle(color: Color(0XFFFFFFFF), fontSize: 12.sp),
+        ),
       ),
     );
   }

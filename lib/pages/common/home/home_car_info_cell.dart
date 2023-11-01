@@ -86,9 +86,9 @@ class HomeCarInfoCell extends StatelessWidget {
           children: <Widget>[
             Text(
               _model.superChapterName.toString().replaceHtmlElement,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Color(0XFF323232),
-                fontSize: 14,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -102,10 +102,10 @@ class HomeCarInfoCell extends StatelessWidget {
                   children: <Widget>[
                     Visibility(
                       visible: (_model.type != null && _model.type != 0),
-                      child: const Text(
+                      child: Text(
                         "车龄：",
                         style:
-                            TextStyle(color: Color(0XFFB0B0B0), fontSize: 12),
+                            TextStyle(color: Color(0XFFB0B0B0), fontSize: 12.sp),
                       ),
                     ),
                     Visibility(
@@ -116,7 +116,7 @@ class HomeCarInfoCell extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         softWrap: true,
                         style:
-                            TextStyle(color: Color(0XFFB0B0B0), fontSize: 12),
+                            TextStyle(color: Color(0XFFB0B0B0), fontSize: 12.sp),
                       ),
                     ),
                   ],
@@ -141,7 +141,7 @@ class HomeCarInfoCell extends StatelessWidget {
                     Text(
                       "月起",
                       style: TextStyle(
-                          color: Theme.of(context).primaryColor, fontSize: 12),
+                          color: Theme.of(context).primaryColor, fontSize: 12.sp),
                     ),
                   ],
                 ),
@@ -166,7 +166,7 @@ class HomeCarInfoCell extends StatelessWidget {
                   child: Text(
                     "查看详情",
                     style:
-                        const TextStyle(color: Color(0XFFFCFCFC), fontSize: 12),
+                        TextStyle(color: Color(0XFFFCFCFC), fontSize: 12.sp),
                   ),
                 ),
               ],

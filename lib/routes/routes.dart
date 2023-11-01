@@ -1,4 +1,5 @@
 import 'package:cp_driver_app/pages/car/binding/car_detail_binding.dart';
+import 'package:cp_driver_app/pages/car/view/price_plan_detail_page.dart';
 import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_done_page.dart';
 import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_fulfillment_page.dart';
 import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_pick_up_page.dart';
@@ -73,7 +74,8 @@ abstract class Routes {
 
   static const splash = "/splash";
 
-  static const carDetail = "/home/carDetail";
+  static const carDetail = "/home/car/detail";
+  static const carPricePlanDetail = "/home/car/pricePlanDetail";
 
   static const unknown = "/unknown";
 
@@ -225,6 +227,11 @@ abstract class Routes {
     GetPage(
       name: carDetail,
       page: () => const CarDetailPage(),
+      binding: CarDetailBinding(),
+    ),
+    GetPage(
+      name: carPricePlanDetail,
+      page: () => const PricePlanDetailPage(),
       binding: CarDetailBinding(),
     ),
   ];

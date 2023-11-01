@@ -1,3 +1,4 @@
+import 'package:cp_driver_app/pages/car/controller/price_plan_detail_controller.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -24,6 +25,10 @@ class CarDetailBinding extends Bindings {
     );
     Get.lazyPut(
       () => CarDetailController(),
+    );
+
+    Get.lazyPut(
+          () => PricePlanDetailController(),
     );
   }
 }

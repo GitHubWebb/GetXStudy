@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -134,7 +135,7 @@ class CarDetailPage extends GetView<CarDetailController> {
                   child: Text(
                     "奇瑞-艾瑞泽E-2021款 智行版",
                     style:
-                        TextStyle(fontSize: 12, color: const Color(0xFF323232)),
+                        TextStyle(fontSize: 12.sp, color: const Color(0xFF323232)),
                   ),
                 ),
                 Container(
@@ -161,12 +162,12 @@ class CarDetailPage extends GetView<CarDetailController> {
                           Text(
                             "12-24个月",
                             style: TextStyle(
-                                color: Color(0xFF191818), fontSize: 12),
+                                color: Color(0xFF191818), fontSize: 12.sp),
                           ),
                           Text(
                             "车龄",
                             style: TextStyle(
-                                color: Color(0xFFB0B0B0), fontSize: 12),
+                                color: Color(0xFFB0B0B0), fontSize: 12.sp),
                           ),
                         ],
                       ),
@@ -187,12 +188,12 @@ class CarDetailPage extends GetView<CarDetailController> {
                           Text(
                             "10万公里以内",
                             style: TextStyle(
-                                color: Color(0xFF191818), fontSize: 12),
+                                color: Color(0xFF191818), fontSize: 12.sp),
                           ),
                           Text(
                             "里程（公里）",
                             style: TextStyle(
-                                color: Color(0xFFB0B0B0), fontSize: 12),
+                                color: Color(0xFFB0B0B0), fontSize: 12.sp),
                           ),
                         ],
                       ),
@@ -212,12 +213,12 @@ class CarDetailPage extends GetView<CarDetailController> {
                           Text(
                             "现车",
                             style: TextStyle(
-                                color: Color(0xFF191818), fontSize: 12),
+                                color: Color(0xFF191818), fontSize: 12.sp),
                           ),
                           Text(
                             "提车周期",
                             style: TextStyle(
-                                color: Color(0xFFB0B0B0), fontSize: 12),
+                                color: Color(0xFFB0B0B0), fontSize: 12.sp),
                           ),
                         ],
                       ),
@@ -250,23 +251,7 @@ class CarDetailPage extends GetView<CarDetailController> {
               model: model,
               callback: (_) async {
                 logger.d("点击了");
-                if (model.id == 24742) {
-                  if (model.link != null) {
-                    final url =
-                        Uri.parse(model.link.toString().replaceHtmlElement);
-                    if (await canLaunchUrl(url)) {
-                      launchUrl(url, mode: LaunchMode.externalApplication);
-                    } else {
-                      Get.snackbar(
-                        "",
-                        "请安装手机QQ",
-                        duration: const Duration(seconds: 1),
-                      );
-                    }
-                  }
-                } else {
-                  Get.toNamed(Routes.myCollect, arguments: model);
-                }
+                Get.toNamed(Routes.carPricePlanDetail, arguments: model);
               },
             ),
           );
