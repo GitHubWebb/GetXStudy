@@ -182,7 +182,8 @@ class MyOrderPage extends GetView<MyOrderController> {
                         itemBuilder: (context, index) {
                           return TabOrderCancelItem(
                             onTap: () {
-                              print('待签约被点击');
+                              print('已取消被点击');
+                              Get.toNamed(Routes.myOrderCanceled);
                             },
                           );
                         },

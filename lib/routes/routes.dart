@@ -1,4 +1,5 @@
 import 'package:cp_driver_app/pages/car/binding/car_detail_binding.dart';
+import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_canceled_page.dart';
 import 'package:cp_driver_app/pages/car/view/price_plan_detail_page.dart';
 import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_done_page.dart';
 import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_fulfillment_page.dart';
@@ -98,6 +99,9 @@ abstract class Routes {
 
   /// 我的订单-已完成
   static const myOrderDone = "/myOrderDone";
+
+  /// 我的订单-已取消
+  static const myOrderCanceled = "/myOrderCanceled";
 
   ///页面合集
   static final routePage = [
@@ -201,6 +205,10 @@ abstract class Routes {
     GetPage(
       name: myOrderDone,
       page: () => const OrderDetailDonePage(),
+    ),
+    GetPage(
+      name: myOrderCanceled,
+      page: () => const OrderDetailCanceledPage(),
     ),
 
     /// ----------- 我的订单 end

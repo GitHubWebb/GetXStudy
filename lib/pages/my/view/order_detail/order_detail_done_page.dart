@@ -1,6 +1,7 @@
 import 'package:cp_driver_app/pages/my/controller/my_order_done_controller.dart';
 import 'package:cp_driver_app/pages/my/widgets/detail_contaienr_cell.dart';
 import 'package:cp_driver_app/pages/my/widgets/detail_label.dart';
+import 'package:cp_driver_app/pages/my/widgets/item_tile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -103,6 +104,79 @@ class OrderDetailDonePage extends GetView<MyOrderDoneController> {
                           const Text("预计结束日期：--"),
                           SizedBox(height: 10.h),
                           const Text("实际结束日期：--"),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    DetailContainerCell(
+                      content: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const DetailLabelWidget(label: "司机合同"),
+                          SizedBox(height: 10.h),
+                          item_tile(
+                            title: "首租合同",
+                            sub: "",
+                            widgetCallBack: () {
+                              print("首租合同背点击");
+                            },
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    DetailContainerCell(
+                      content: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const DetailLabelWidget(label: "用车记录"),
+                          SizedBox(height: 10.h),
+                          item_tile(
+                            title: "提车",
+                            sub: "",
+                            widgetCallBack: () {
+                              print("提车点击");
+                            },
+                          ),
+                          SizedBox(height: 10.h),
+                          item_tile(
+                            title: "换车",
+                            sub: "",
+                            widgetCallBack: () {
+                              print("换车点击");
+                            },
+                          ),
+                          SizedBox(height: 10.h),
+                          item_tile(
+                            title: "退车",
+                            sub: "",
+                            widgetCallBack: () {
+                              print("退车点击");
+                            },
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    DetailContainerCell(
+                      content: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const DetailLabelWidget(label: "延租信息"),
+                          SizedBox(height: 10.h),
+                          item_tile(
+                            title: "延租",
+                            sub: "",
+                            widgetCallBack: () {
+                              print("提车点击");
+                            },
+                          ),
                         ],
                       ),
                     ),
