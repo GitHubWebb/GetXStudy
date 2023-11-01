@@ -82,7 +82,7 @@ class MyOrderPage extends GetView<MyOrderController> {
                         itemBuilder: (context, index) {
                           return TabOrderPaidItem(
                             onTap: () {
-                              print('待签约被点击');
+                              print('待支付被点击');
                               Get.toNamed(Routes.myOrderPaid);
                             },
                           );
@@ -107,7 +107,8 @@ class MyOrderPage extends GetView<MyOrderController> {
                         itemBuilder: (context, index) {
                           return TabOrderPicUpkItem(
                             onTap: () {
-                              print('待签约被点击');
+                              print('待提车');
+                              Get.toNamed(Routes.myOrderPickUp);
                             },
                           );
                         },
@@ -131,7 +132,8 @@ class MyOrderPage extends GetView<MyOrderController> {
                         itemBuilder: (context, index) {
                           return TabOrderFulfillmentItem(
                             onTap: () {
-                              print('待签约被点击');
+                              print('履约中');
+                              Get.toNamed(Routes.myOrderFulfillment);
                             },
                           );
                         },
@@ -155,7 +157,8 @@ class MyOrderPage extends GetView<MyOrderController> {
                         itemBuilder: (context, index) {
                           return TabOrderDoneItem(
                             onTap: () {
-                              print('待签约被点击');
+                              print('已完成被点击');
+                              Get.toNamed(Routes.myOrderDone);
                             },
                           );
                         },

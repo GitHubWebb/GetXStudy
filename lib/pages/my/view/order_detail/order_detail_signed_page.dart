@@ -63,6 +63,9 @@ class OrderDetailSignedPage extends GetView<MyOrderSignedController> {
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
                     // ------- 商品信息
                     DetailContainerCell(
                       content: Column(
@@ -82,6 +85,9 @@ class OrderDetailSignedPage extends GetView<MyOrderSignedController> {
                           SizedBox(height: 10.h),
                         ],
                       ),
+                    ),
+                    SizedBox(
+                      height: 15.h,
                     ),
                     // ------- 业务信息
                     DetailContainerCell(

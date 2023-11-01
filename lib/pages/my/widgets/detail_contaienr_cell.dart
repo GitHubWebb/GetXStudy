@@ -10,7 +10,7 @@ class DetailContainerCell extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(vertical: 9.h, horizontal: 15.w),
-      margin: EdgeInsets.only(bottom: 15.h),
+      // margin: EdgeInsets.only(bottom: 15.h),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10.r),

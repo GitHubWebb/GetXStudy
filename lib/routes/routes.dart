@@ -1,4 +1,7 @@
 import 'package:cp_driver_app/pages/car/binding/car_detail_binding.dart';
+import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_done_page.dart';
+import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_fulfillment_page.dart';
+import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_pick_up_page.dart';
 
 import '../pages/car/view/car_detail_page.dart';
 import '../pages/message/binding/msg_binding.dart';
@@ -84,6 +87,15 @@ abstract class Routes {
 
   /// 我的订单-待签约
   static const myOrderPaid = "/myOrderPaid";
+
+  /// 我的订单-待取车
+  static const myOrderPickUp = "/myOrderPickUp";
+
+  /// 我的订单-履约中
+  static const myOrderFulfillment = "/myOrderFulfillment";
+
+  /// 我的订单-已完成
+  static const myOrderDone = "/myOrderDone";
 
   ///页面合集
   static final routePage = [
@@ -173,6 +185,20 @@ abstract class Routes {
     GetPage(
       name: myOrderPaid,
       page: () => const OrderDetailPaidPage(),
+    ),
+
+    GetPage(
+      name: myOrderPickUp,
+      page: () => const OrderDetailPickUpPage(),
+    ),
+
+    GetPage(
+      name: myOrderFulfillment,
+      page: () => const OrderDetailFulfillmentPage(),
+    ),
+    GetPage(
+      name: myOrderDone,
+      page: () => const OrderDetailDonePage(),
     ),
 
     /// ----------- 我的订单 end

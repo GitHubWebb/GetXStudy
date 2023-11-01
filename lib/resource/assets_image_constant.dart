@@ -22,4 +22,6 @@ class AssetsImageConstant {
   static const myBillIcon = "assets/images/my/my_bill_icon.png";
   static const myCarChangeIcon = "assets/images/my/my_car_change_icon.png";
   static const mySettingIcon = "assets/images/my/my_setting_icon.png";
+  static const myOrderLeaseRenewal =
+      "assets/images/my/my_lease_renewal_icon.png";
 }

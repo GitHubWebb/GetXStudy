@@ -88,17 +88,20 @@ class TabOrderFulfillmentItem extends StatelessWidget {
                     SizedBox(
                       height: 9.h,
                     ),
-                    Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 5.h, horizontal: 10.w),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.r),
-                          border: Border.all(width: 0.5)),
-                      child: Text(
-                        '查看详情',
-                        style: TextStyle(
-                          color: const Color(0XFF6D6D6D),
-                          fontSize: 10.sp,
+                    GestureDetector(
+                      onTap: onTap,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 5.h, horizontal: 10.w),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.r),
+                            border: Border.all(width: 0.5)),
+                        child: Text(
+                          '查看详情',
+                          style: TextStyle(
+                            color: const Color(0XFF6D6D6D),
+                            fontSize: 10.sp,
+                          ),
                         ),
                       ),
                     )
