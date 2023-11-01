@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           title: '麦卡出行',
-          navigatorObservers: [GetXRouterObserver()],
+          navigatorObservers: [GetXRouterObserver(), FlutterSmartDialog.observer],
           unknownRoute: Routes.unknownPage,
           debugShowCheckedModeBanner:
               AppEnvironment.environment == Environment.dev ? true : false,
@@ -45,15 +45,7 @@ class MyApp extends StatelessWidget {
           /// 经过初始化的binding,
           initialBinding: AccountBinding(),
 
-          builder: (context, widget) {
-            widget = EasyLoading.init()(context, widget);
-            widget = FlutterSmartDialog.init()(context, widget);
-            // return child;
-            return MediaQuery(
-              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-              child: widget,
-            );
-          },
+          builder: FlutterSmartDialog.init(builder: _builder),
 
           /// 自定义主题
           theme: FlexThemeData.light(
@@ -137,6 +129,16 @@ class MyApp extends StatelessWidget {
       },
     );
   }
+
+  Widget _builder(context, widget) {
+      widget = EasyLoading.init()(context, widget);
+      // widget = FlutterSmartDialog.init()(context, widget);
+      // return child;
+      return MediaQuery(
+        data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+        child: widget,
+      );
+    }
 
   /// App运行过程中,如果在iOS的设置中更改了亮度模式,还是无法实时进行更改,只能下次运行的时候才能体现变化,体验不好
   ThemeData _getMaterialCurrentTheme() {

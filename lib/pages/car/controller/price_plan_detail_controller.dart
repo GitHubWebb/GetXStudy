@@ -1,3 +1,4 @@
+import 'package:cp_driver_app/pages/pay/controller/select_pay_dialog_controller.dart';
 import 'package:get/get.dart';
 
 import '../../../base/base_refresh_controller.dart';
@@ -19,6 +20,8 @@ import '../repository/car_detail_repository.dart';
 class PricePlanDetailController
     extends BaseRequestController<CarDetailRepository, List<PricePlanEntity>> {
 
+  late SelectPayDialogController selectPayController;
+
   @override
   void onInit() {
     logger.d("onInit() $className");
@@ -26,6 +29,8 @@ class PricePlanDetailController
 
     final myController = Get.find<MyController>();
     myController.autoLogin();
+
+    selectPayController = Get.find<SelectPayDialogController>();
 
     aRequest();
   }

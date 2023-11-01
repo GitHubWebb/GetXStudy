@@ -89,7 +89,7 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
                   margin: const EdgeInsets.only(top: 14),
                   child: Text(
                     "奇瑞-艾瑞泽E-2021款 智行版",
-                     style: TextStyle(
+                    style: TextStyle(
                         fontSize: 14.sp, color: const Color(0xFF323232)),
                   ),
                 ),
@@ -325,7 +325,7 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
       margin: const EdgeInsets.only(left: 10, top: 14, right: 10, bottom: 13),
       child: TextButton(
         onPressed: () {
-          Get.toNamed(Routes.selectPayDialog, arguments: controller);
+          controller.selectPayController.showSelectPayDialog();
         },
         style: ButtonStyle(
           backgroundColor:
