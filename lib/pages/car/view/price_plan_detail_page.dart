@@ -70,6 +70,7 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
   Widget buildCardInfo() {
     return ListView.builder(
         shrinkWrap: true,
+        physics: new NeverScrollableScrollPhysics(),
         itemCount: 1,
         itemBuilder: (context, index) {
           return Container(
@@ -285,6 +286,7 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
   Widget buildPricePlanDetailItemList(PricePlanDetailController controller) {
     return ListView.builder(
         shrinkWrap: true,
+        physics: new NeverScrollableScrollPhysics(),
         itemCount: (controller.data ?? []).isEmpty
             ? 0
             : (controller.data ?? []).length,

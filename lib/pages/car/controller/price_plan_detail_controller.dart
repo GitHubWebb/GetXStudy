@@ -85,6 +85,46 @@ class PricePlanDetailController
     data?.add(bean);
 
     bean = PricePlanEntity();
+    bean.name = "服务：";
+    bean.value = "运管/司管";
+    data?.add(bean);
+
+    bean = PricePlanEntity();
+    bean.name = "服务：";
+    bean.value = "运管/司管";
+    data?.add(bean);
+
+    bean = PricePlanEntity();
+    bean.name = "服务：";
+    bean.value = "运管/司管";
+    data?.add(bean);
+
+    bean = PricePlanEntity();
+    bean.name = "服务：";
+    bean.value = "运管/司管";
+    data?.add(bean);
+
+    bean = PricePlanEntity();
+    bean.name = "服务：";
+    bean.value = "运管/司管";
+    data?.add(bean);
+
+    bean = PricePlanEntity();
+    bean.name = "服务：";
+    bean.value = "运管/司管";
+    data?.add(bean);
+
+    bean = PricePlanEntity();
+    bean.name = "服务：";
+    bean.value = "运管/司管";
+    data?.add(bean);
+
+    bean = PricePlanEntity();
+    bean.name = "服务：";
+    bean.value = "运管/司管";
+    data?.add(bean);
+
+    bean = PricePlanEntity();
     bean.name = "其他：";
     bean.value = null;
     data?.add(bean);
