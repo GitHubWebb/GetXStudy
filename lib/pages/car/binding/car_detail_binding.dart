@@ -28,7 +28,7 @@ class CarDetailBinding extends Bindings {
     );
 
     Get.lazyPut(
-          () => PricePlanDetailController(),
+      () => PricePlanDetailController(),
     );
   }
 }

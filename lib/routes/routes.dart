@@ -4,6 +4,8 @@ import 'package:cp_driver_app/pages/car/view/price_plan_detail_page.dart';
 import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_done_page.dart';
 import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_fulfillment_page.dart';
 import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_pick_up_page.dart';
+import 'package:cp_driver_app/pages/pay/binding/select_pay_dialog_binding.dart';
+import 'package:cp_driver_app/pages/pay/view/select_pay_dialog_page.dart';
 
 import '../pages/car/view/car_detail_page.dart';
 import '../pages/message/binding/msg_binding.dart';
@@ -75,8 +77,15 @@ abstract class Routes {
 
   static const splash = "/splash";
 
+  //<editor-fold desc="车辆信息相关">
   static const carDetail = "/home/car/detail";
+
   static const carPricePlanDetail = "/home/car/pricePlanDetail";
+
+  //</editor-fold>
+
+  /// 选择支付方式弹框
+  static const selectPayDialog = "/pay/selectPayDialog";
 
   static const unknown = "/unknown";
 
@@ -232,6 +241,13 @@ abstract class Routes {
       page: () => const WelcomePage(),
     ),
     GetPage(name: splash, page: () => const SplashPage()),
+
+    GetPage(
+        name: selectPayDialog,
+        page: () => const SelectPayDialogPage(),
+        binding: SelectPayDialogBinding()),
+
+    //<editor-fold desc="车辆信息 相关页面">
     GetPage(
       name: carDetail,
       page: () => const CarDetailPage(),
@@ -242,6 +258,7 @@ abstract class Routes {
       page: () => const PricePlanDetailPage(),
       binding: CarDetailBinding(),
     ),
+    //</editor-fold>
   ];
 
   static final unknownPage = GetPage(

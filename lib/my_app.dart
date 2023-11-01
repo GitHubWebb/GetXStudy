@@ -4,6 +4,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import '../account_manager/account_binding.dart';
 import '../env/app_env_config.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
 
           builder: (context, widget) {
             widget = EasyLoading.init()(context, widget);
+            widget = FlutterSmartDialog.init()(context, widget);
             // return child;
             return MediaQuery(
               data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),

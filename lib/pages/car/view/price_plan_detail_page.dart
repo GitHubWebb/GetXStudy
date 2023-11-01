@@ -89,8 +89,8 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
                   margin: const EdgeInsets.only(top: 14),
                   child: Text(
                     "奇瑞-艾瑞泽E-2021款 智行版",
-                    style:
-                        TextStyle(fontSize: 14.sp, color: const Color(0xFF323232)),
+                     style: TextStyle(
+                        fontSize: 14.sp, color: const Color(0xFF323232)),
                   ),
                 ),
                 Column(
@@ -304,8 +304,10 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
                 itemCount: modelList.length,
                 model: model,
                 callback: (_) async {
+                  /*
                   logger.d("点击了");
                   Get.toNamed(Routes.myCollect, arguments: model);
+                  */
                 },
               ),
             );
@@ -323,7 +325,7 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
       margin: const EdgeInsets.only(left: 10, top: 14, right: 10, bottom: 13),
       child: TextButton(
         onPressed: () {
-          Get.toNamed(Routes.myCollect, arguments: "_model");
+          Get.toNamed(Routes.selectPayDialog, arguments: controller);
         },
         style: ButtonStyle(
           backgroundColor:
