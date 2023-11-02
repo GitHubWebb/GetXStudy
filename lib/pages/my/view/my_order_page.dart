@@ -1,12 +1,13 @@
 import 'package:cp_driver_app/pages/common/keep_alive_wrapper.dart';
 import 'package:cp_driver_app/pages/common/refresh_header_footer.dart';
 import 'package:cp_driver_app/pages/common/status_view.dart';
-import 'package:cp_driver_app/pages/my/controller/my_order_%20canceled_controller.dart';
-import 'package:cp_driver_app/pages/my/controller/my_order_done_controller.dart';
-import 'package:cp_driver_app/pages/my/controller/my_order_fulfillment_controller.dart';
-import 'package:cp_driver_app/pages/my/controller/my_order_paid_controller.dart';
-import 'package:cp_driver_app/pages/my/controller/my_order_pick_up_controller.dart';
-import 'package:cp_driver_app/pages/my/controller/my_order_signed_controller.dart';
+import 'package:cp_driver_app/pages/my/controller/order/my_order_%20canceled_controller.dart';
+import 'package:cp_driver_app/pages/my/controller/order/my_order_controller.dart';
+import 'package:cp_driver_app/pages/my/controller/order/my_order_done_controller.dart';
+import 'package:cp_driver_app/pages/my/controller/order/my_order_fulfillment_controller.dart';
+import 'package:cp_driver_app/pages/my/controller/order/my_order_paid_controller.dart';
+import 'package:cp_driver_app/pages/my/controller/order/my_order_pick_up_controller.dart';
+import 'package:cp_driver_app/pages/my/controller/order/my_order_signed_controller.dart';
 import 'package:cp_driver_app/pages/my/widgets/tab_order_cancel_item.dart';
 import 'package:cp_driver_app/pages/my/widgets/tab_order_done_item.dart';
 import 'package:cp_driver_app/pages/my/widgets/tab_order_fulfillment_item.dart';
@@ -18,8 +19,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-
-import '../controller/my_order_controller.dart';
 
 class MyOrderPage extends GetView<MyOrderController> {
   const MyOrderPage({Key? key}) : super(key: key);

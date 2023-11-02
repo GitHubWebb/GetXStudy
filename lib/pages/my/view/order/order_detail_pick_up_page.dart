@@ -1,4 +1,5 @@
-import 'package:cp_driver_app/pages/my/controller/my_order_done_controller.dart';
+
+import 'package:cp_driver_app/pages/my/controller/order/my_order_pick_up_controller.dart';
 import 'package:cp_driver_app/pages/my/widgets/detail_contaienr_cell.dart';
 import 'package:cp_driver_app/pages/my/widgets/detail_label.dart';
 import 'package:cp_driver_app/pages/my/widgets/item_tile.dart';
@@ -6,14 +7,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class OrderDetailDonePage extends GetView<MyOrderDoneController> {
-  const OrderDetailDonePage({super.key});
+class OrderDetailPickUpPage extends GetView<MyOrderPickUpController> {
+  const OrderDetailPickUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('订单详情'),
+        title: const Text('订单详情'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -25,9 +26,9 @@ class OrderDetailDonePage extends GetView<MyOrderDoneController> {
                 decoration: const BoxDecoration(color: Colors.white),
                 child: Align(
                   child: Text(
-                    "已完成",
+                    "待提车",
                     style: TextStyle(
-                        fontSize: 12.sp, color: Theme.of(context).primaryColor),
+                        fontSize: 12.sp, color: const Color(0XFFFF0000)),
                   ),
                 ),
               ),
@@ -110,6 +111,7 @@ class OrderDetailDonePage extends GetView<MyOrderDoneController> {
                     SizedBox(
                       height: 15.h,
                     ),
+                    // ------- 司机合同
                     DetailContainerCell(
                       content: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,62 +128,36 @@ class OrderDetailDonePage extends GetView<MyOrderDoneController> {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 15.h,
-                    ),
-                    DetailContainerCell(
-                      content: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const DetailLabelWidget(label: "用车记录"),
-                          SizedBox(height: 10.h),
-                          item_tile(
-                            title: "提车",
-                            sub: "",
-                            widgetCallBack: () {
-                              print("提车点击");
-                            },
-                          ),
-                          SizedBox(height: 10.h),
-                          item_tile(
-                            title: "换车",
-                            sub: "",
-                            widgetCallBack: () {
-                              print("换车点击");
-                            },
-                          ),
-                          SizedBox(height: 10.h),
-                          item_tile(
-                            title: "退车",
-                            sub: "",
-                            widgetCallBack: () {
-                              print("退车点击");
-                            },
-                          )
-                        ],
-                      ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 42.h, right: 12.w, bottom: 10.h),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Text(
+                      '已付押金：500.00元',
+                      style: TextStyle(color: Color(0XFF323232)),
                     ),
                     SizedBox(
-                      height: 15.h,
-                    ),
-                    DetailContainerCell(
-                      content: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const DetailLabelWidget(label: "延租信息"),
-                          SizedBox(height: 10.h),
-                          item_tile(
-                            title: "延租",
-                            sub: "",
-                            widgetCallBack: () {
-                              print("提车点击");
-                            },
-                          ),
-                        ],
-                      ),
+                      width: 15.w,
                     ),
                   ],
                 ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 9.h),
+                decoration: BoxDecoration(
+                    color: const Color(0XFFD4D4D4),
+                    borderRadius: BorderRadius.circular(15.r)),
+                child: Align(
+                    child: Text(
+                  '取消订单',
+                  style: TextStyle(fontSize: 12.sp, color: Colors.white),
+                )),
               ),
             ],
           ),

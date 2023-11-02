@@ -139,7 +139,7 @@ class MyPage extends GetView<MyController> {
                                   BarItemWidget(
                                     title: "账单",
                                     imgPath: AssetsImageConstant.myBillIcon,
-                                    onTap: () => {print("账单")},
+                                    onTap: () => {Get.toNamed(Routes.myBill)},
                                   ),
                                   BarItemWidget(
                                     title: "申请换车",

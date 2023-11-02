@@ -1,17 +1,19 @@
 import 'package:cp_driver_app/pages/car/binding/car_detail_binding.dart';
-import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_canceled_page.dart';
+import 'package:cp_driver_app/pages/my/binding/my_bill_binding.dart';
+import 'package:cp_driver_app/pages/my/view/my_bill_page.dart';
+import 'package:cp_driver_app/pages/my/view/order/order_detail_canceled_page.dart';
 import 'package:cp_driver_app/pages/car/view/price_plan_detail_page.dart';
-import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_done_page.dart';
-import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_fulfillment_page.dart';
-import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_pick_up_page.dart';
+import 'package:cp_driver_app/pages/my/view/order/order_detail_done_page.dart';
+import 'package:cp_driver_app/pages/my/view/order/order_detail_fulfillment_page.dart';
+import 'package:cp_driver_app/pages/my/view/order/order_detail_pick_up_page.dart';
 import 'package:cp_driver_app/pages/pay/binding/select_pay_dialog_binding.dart';
 
 import '../pages/car/view/car_detail_page.dart';
 import '../pages/message/binding/msg_binding.dart';
 import 'package:cp_driver_app/pages/my/binding/my_order_binding.dart';
 import 'package:cp_driver_app/pages/my/view/my_order_page.dart';
-import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_paid_page.dart';
-import 'package:cp_driver_app/pages/my/view/order_detail/order_detail_signed_page.dart';
+import 'package:cp_driver_app/pages/my/view/order/order_detail_paid_page.dart';
+import 'package:cp_driver_app/pages/my/view/order/order_detail_signed_page.dart';
 import 'package:get/get.dart';
 import '../account_manager/account_binding.dart';
 import '../example_app/state_mixin_example_page.dart';
@@ -110,6 +112,8 @@ abstract class Routes {
 
   /// 我的订单-已取消
   static const myOrderCanceled = "/myOrderCanceled";
+
+  static const myBill = "/myBill";
 
   ///页面合集
   static final routePage = [
@@ -220,6 +224,14 @@ abstract class Routes {
     ),
 
     /// ----------- 我的订单 end
+    /// ----------- 我的账单 begin
+    GetPage(
+      name: myBill,
+      page: () => const MyBillPage(),
+      bindings: [MyBillBinding()],
+    ),
+
+    /// ----------- 我的账单 end
     GetPage(
       name: web,
       page: () => const WebPage(),

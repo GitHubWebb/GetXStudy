@@ -1,4 +1,4 @@
-import 'package:cp_driver_app/pages/my/controller/my_order_paid_controller.dart';
+import 'package:cp_driver_app/pages/my/controller/order/my_order_paid_controller.dart';
 import 'package:cp_driver_app/pages/my/widgets/detail_contaienr_cell.dart';
 import 'package:cp_driver_app/pages/my/widgets/detail_label.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

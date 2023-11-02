@@ -1,9 +1,10 @@
+import 'package:cp_driver_app/pages/my/controller/order/my_order_fulfillment_controller.dart';
 import 'package:cp_driver_app/pages/my/widgets/detail_contaienr_cell.dart';
 import 'package:cp_driver_app/pages/my/widgets/detail_label.dart';
 import 'package:cp_driver_app/pages/my/widgets/item_tile.dart';
 import 'package:cp_driver_app/resource/assets_image_constant.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:cp_driver_app/pages/my/controller/my_order_fulfillment_controller.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
