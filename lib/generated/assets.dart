@@ -9,7 +9,6 @@ class Assets {
   static const String assetsImagesPlaceholder = 'assets/images/placeholder.png';
   static const String assetsImagesSaber = 'assets/images/saber.jpg';
   static const String assetsImagesSaberLogo = 'assets/images/saber_logo.jpg';
-  static const String assetsImagesSeasonAliPay = 'assets/images/season_ali_pay.jpg';
   static const String assetsImagesUpgrade = 'assets/images/upgrade.png';
   static const String assetsImagesWelcome1 = 'assets/images/welcome_1.png';
   static const String assetsImagesWelcome2 = 'assets/images/welcome_2.jpg';
@@ -25,7 +24,6 @@ class Assets {
   static const String imagesPlaceholder = 'assets/images/placeholder.png';
   static const String imagesSaber = 'assets/images/saber.jpg';
   static const String imagesSaberLogo = 'assets/images/saber_logo.jpg';
-  static const String imagesSeasonAliPay = 'assets/images/season_ali_pay.jpg';
   static const String imagesUpgrade = 'assets/images/upgrade.png';
   static const String imagesWelcome1 = 'assets/images/welcome_1.png';
   static const String imagesWelcome2 = 'assets/images/welcome_2.jpg';
@@ -33,8 +31,14 @@ class Assets {
   static const String myMyBillIcon = 'assets/images/my/my_bill_icon.png';
   static const String myMyCarChangeIcon = 'assets/images/my/my_car_change_icon.png';
   static const String myMyHeaderBg = 'assets/images/my/my_header_bg.png';
+  static const String myMyLeaseRenewalIcon = 'assets/images/my/my_lease_renewal_icon.png';
   static const String myMyOrdersIcon = 'assets/images/my/my_orders_icon.png';
   static const String myMySettingIcon = 'assets/images/my/my_setting_icon.png';
+  static const String payIcAlipay = 'assets/images/pay/ic_alipay.png';
+  static const String payIcNormalRadio = 'assets/images/pay/ic_normal_radio.png';
+  static const String payIcQuestionMarkRing = 'assets/images/pay/ic_question_mark_ring.png';
+  static const String payIcSelectRadio = 'assets/images/pay/ic_select_radio.png';
+  static const String payIcWechat = 'assets/images/pay/ic_wechat.png';
   static const String tabsHomeActived2x = 'assets/images/tabs/home_actived@2x.png';
   static const String tabsHomeNormal2x = 'assets/images/tabs/home_normal@2x.png';
   static const String tabsMyActived2x = 'assets/images/tabs/my_actived@2x.png';

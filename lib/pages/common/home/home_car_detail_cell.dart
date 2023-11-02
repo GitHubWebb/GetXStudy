@@ -37,7 +37,7 @@ class HomeCarDetailCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         _cellTapCallback(_model);
       },
@@ -87,8 +87,8 @@ class HomeCarDetailCell extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 71,
-                    height: 5,
+                    width: 71.w,
+                    height: 5.h,
                     decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.all(Radius.circular(2)),
@@ -124,7 +124,7 @@ class HomeCarDetailCell extends StatelessWidget {
 
   Widget _leftContentView() {
     return Container(
-      width: 40,
+      width: 40.w,
       alignment: Alignment.center,
       margin: const EdgeInsets.only(
         left: 15,

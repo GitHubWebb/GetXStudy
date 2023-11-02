@@ -41,34 +41,36 @@ class CarDetailPage extends GetView<CarDetailController> {
         backIconColor: const Color(0xFF525252),
         backgroundColor: const Color(0xF9F9F9),
       ),
-      body: StatusView<CarDetailController>(
-        contentBuilder: (controller) {
-          return Container(
-            color: const Color(0XFFF9F9F9),
-            child: SmartRefresher(
-              enablePullUp: true,
-              header: const RefreshHeader(),
-              footer: const RefreshFooter(),
-              controller: controller.refreshController,
-              onRefresh: controller.onRefresh,
-              onLoading: controller.onLoadMore,
-              child: CustomScrollView(
-                physics: const BouncingScrollPhysics(),
-                slivers: <Widget>[
-                  buildHeadBannerSliverAdapter(controller),
-                  buildCardInfoKongSliver(controller),
-                  buildCardDetailItemSliverList(controller),
-                ],
+      body: SafeArea(
+        child: StatusView<CarDetailController>(
+          contentBuilder: (controller) {
+            return Container(
+              color: const Color(0XFFF9F9F9),
+              child: SmartRefresher(
+                enablePullUp: true,
+                header: const RefreshHeader(),
+                footer: const RefreshFooter(),
+                controller: controller.refreshController,
+                onRefresh: controller.onRefresh,
+                onLoading: controller.onLoadMore,
+                child: CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: <Widget>[
+                    buildHeadBannerSliverAdapter(controller),
+                    buildCardInfoKongSliver(controller),
+                    buildCardDetailItemSliverList(controller),
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
 
   //<editor-fold desc="顶部Banner">
-  /** 顶部Banner */
+  /// 顶部Banner
   Widget buildHeadBannerSliverAdapter(CarDetailController controller) {
     return SliverToBoxAdapter(
       child: Container(
@@ -112,7 +114,7 @@ class CarDetailPage extends GetView<CarDetailController> {
   //</editor-fold>
 
   //<editor-fold desc="车辆信息金刚区">
-  /** 车辆信息金刚区 */
+  /// 车辆信息金刚区
   Widget buildCardInfoKongSliver(CarDetailController controller) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
@@ -155,8 +157,8 @@ class CarDetailPage extends GetView<CarDetailController> {
                             margin: const EdgeInsets.only(bottom: 7),
                             child: Image.asset(
                               Assets.homeIconCarMgmt,
-                              width: 20,
-                              height: 19,
+                              width: 20.w,
+                              height: 19.h,
                             ),
                           ),
                           Text(
@@ -181,8 +183,8 @@ class CarDetailPage extends GetView<CarDetailController> {
                             margin: const EdgeInsets.only(bottom: 4),
                             child: Image.asset(
                               Assets.homeIconVehicleMileage,
-                              width: 18,
-                              height: 18,
+                              width: 18.w,
+                              height: 18.h,
                             ),
                           ),
                           Text(
@@ -206,8 +208,8 @@ class CarDetailPage extends GetView<CarDetailController> {
                             margin: const EdgeInsets.only(bottom: 5),
                             child: Image.asset(
                               Assets.homeIconCarStock,
-                              width: 20,
-                              height: 16,
+                              width: 20.w,
+                              height: 16.h,
                             ),
                           ),
                           Text(
@@ -237,7 +239,7 @@ class CarDetailPage extends GetView<CarDetailController> {
 //</editor-fold>
 
   //<editor-fold desc="底部 详细信息列表">
-  /** 底部 详细信息列表 */
+  /// 底部 详细信息列表
   Widget buildCardDetailItemSliverList(CarDetailController controller) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(

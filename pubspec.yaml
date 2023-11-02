@@ -55,6 +55,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/home/
+    - assets/images/pay/
     - assets/images/my/
     - assets/images/tabs/
     - assets/images/ic_eye.png
@@ -63,7 +64,6 @@ flutter:
     - assets/images/placeholder.png
     - assets/images/saber.jpg
     - assets/images/saber_logo.jpg
-    - assets/images/season_ali_pay.jpg
     - assets/images/upgrade.png
     - assets/images/welcome_1.png
     - assets/images/welcome_2.jpg

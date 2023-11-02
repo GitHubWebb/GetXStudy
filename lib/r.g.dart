@@ -108,9 +108,7 @@
   /// asset: assets/images/saber_logo.jpg
       // ignore: non_constant_identifier_names
       final saber_logo_jpg = const AssetResource("assets/images/saber_logo.jpg", packageName: null);
-  /// asset: assets/images/season_ali_pay.jpg
       // ignore: non_constant_identifier_names
-      final season_ali_pay_jpg = const AssetResource("assets/images/season_ali_pay.jpg", packageName: null);
   /// asset: assets/images/upgrade.png
       // ignore: non_constant_identifier_names
       final upgrade = const AssetResource("assets/images/upgrade.png", packageName: null);
@@ -168,11 +166,7 @@
       AssetImage saber_logo_jpg() {
         return AssetImage(asset.saber_logo_jpg.keyName);
       }
-  /// asset: assets/images/season_ali_pay.jpg
       // ignore: non_constant_identifier_names
-      AssetImage season_ali_pay_jpg() {
-        return AssetImage(asset.season_ali_pay_jpg.keyName);
-      }
   /// asset: assets/images/upgrade.png
       // ignore: non_constant_identifier_names
       AssetImage upgrade() {

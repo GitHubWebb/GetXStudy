@@ -42,8 +42,8 @@ class LoginPage extends GetView<LoginController> {
                           ),
                         ),
                         SizedBox(
-                          height: 40,
-                          width: 40,
+                          height: 40.h,
+                          width: 40.w,
                           child: InkWell(
                             child: const Icon(Icons.clear),
                             onTap: () {
@@ -71,8 +71,8 @@ class LoginPage extends GetView<LoginController> {
                           ),
                         ),
                         SizedBox(
-                          height: 20,
-                          width: 38,
+                          height: 20.w,
+                          width: 38.h,
                           child: Obx(
                             () => InkWell(
                               child: controller.obscureText.value

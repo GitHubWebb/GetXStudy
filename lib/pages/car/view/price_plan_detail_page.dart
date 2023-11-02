@@ -45,28 +45,30 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
         backIconColor: const Color(0xFF525252),
         backgroundColor: const Color(0xF9F9F9),
       ),
-      body: StatusView<PricePlanDetailController>(
-        contentBuilder: (controller) {
-          return Container(
-            color: const Color(0XFFF9F9F9),
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                children: <Widget>[
-                  buildCardInfo(),
-                  buildPricePlanContentItemContainer(context, controller),
-                  buildSubmitBtn(context),
-                ],
+      body: SafeArea(
+        child: StatusView<PricePlanDetailController>(
+          contentBuilder: (controller) {
+            return Container(
+              color: const Color(0XFFF9F9F9),
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  children: <Widget>[
+                    buildCardInfo(),
+                    buildPricePlanContentItemContainer(context, controller),
+                    buildSubmitBtn(context),
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
 
   //<editor-fold desc="车辆信息">
-  /** 车辆信息金刚区 */
+  /// 车辆信息金刚区
   Widget buildCardInfo() {
     return ListView.builder(
         shrinkWrap: true,
@@ -234,7 +236,7 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
 //</editor-fold>
 
   //<editor-fold desc="底部 详细信息列表">
-  /** 底部 内容 详细信息列表 */
+  /// 底部 内容 详细信息列表
   Container buildPricePlanContentItemContainer(
       BuildContext context, PricePlanDetailController controller) {
     return Container(
@@ -267,8 +269,8 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
                     ),
                   ),
                   Container(
-                    width: 46,
-                    height: 5,
+                    width: 46.w,
+                    height: 5.h,
                     decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.all(Radius.circular(2)),
@@ -282,7 +284,7 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
         ));
   }
 
-  /** 底部 详细信息列表 */
+  /// 底部 详细信息列表
   Widget buildPricePlanDetailItemList(PricePlanDetailController controller) {
     return ListView.builder(
         shrinkWrap: true,
@@ -318,14 +320,14 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
 //</editor-fold>
 
   //<editor-fold desc="立即支付定金">
-  /** 立即支付定金 */
+  /// 立即支付定金
   Widget buildSubmitBtn(BuildContext context) {
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.only(left: 10, top: 14, right: 10, bottom: 13),
       child: TextButton(
         onPressed: () {
-          controller.selectPayController.showSelectPayDialog();
+          controller.selectPayController.showSelectPayDialog(context);
         },
         style: ButtonStyle(
           backgroundColor:

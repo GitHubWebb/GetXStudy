@@ -18,7 +18,7 @@ class CarDetailRepository extends IRepository {
           {required int page}) =>
       http.Request.get(api: "${Api.getArticleList}${page.toString()}/json");
 
-  /** 获取价格方案数据集合 */
+  /// 获取价格方案数据集合
   Future<BaseEntity<List<PricePlanEntity>>> getPricePlanList(
       {required int page}) =>
       http.Request.get(api: "${Api.getArticleList}${page.toString()}/json");

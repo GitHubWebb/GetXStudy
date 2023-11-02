@@ -27,7 +27,7 @@ class HomeCarInfoCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         _cellTapCallback(_model);
       },
@@ -58,8 +58,8 @@ class HomeCarInfoCell extends StatelessWidget {
           top: 21,
         ),
         child: SizedBox(
-          width: 96,
-          height: 65,
+          width: 96.w,
+          height: 65.h,
           child: CachedNetworkImage(
             fit: BoxFit.fitHeight,
             imageUrl: _model.envelopePic.toString(),

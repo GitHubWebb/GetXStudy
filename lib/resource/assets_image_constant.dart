@@ -11,7 +11,7 @@ class AssetsImageConstant {
 
   /// app home header background icons
   static const homePageSearchIcon = "assets/images/home/ic_search.png";
-  /** 车辆详情 金刚区分割线 */
+  /// 车辆详情 金刚区分割线 */
   static const homeCarInfoLineBg = "assets/images/home/bg_car_info_line.png";
 
   /// app my header background icons

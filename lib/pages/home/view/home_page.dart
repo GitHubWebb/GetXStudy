@@ -3,6 +3,7 @@ import 'package:cp_driver_app/resource/assets_image_constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:cp_driver_app/env/app_env_config.dart';
@@ -43,8 +44,8 @@ class HomePage extends GetView<HomeController> {
                 right: 8,
               ),
               child: SizedBox(
-                width: 25,
-                height: 25,
+                width: 25.w,
+                height: 25.h,
                 child: CachedNetworkImage(
                   fit: BoxFit.fitHeight,
                   imageUrl: '',
@@ -81,7 +82,7 @@ class HomePage extends GetView<HomeController> {
   }
 
   //<editor-fold desc="navigationBar 左侧切换城市">
-  /** navigationBar 左侧切换城市 */
+  /// navigationBar 左侧切换城市
   Widget buildBarCityInkWell() {
     return InkWell(
       onTap: () {
@@ -111,7 +112,7 @@ class HomePage extends GetView<HomeController> {
   //</editor-fold>
 
   //<editor-fold desc="navigationBar 搜索框">
-  /** navigationBar 搜索框 */
+  /// navigationBar 搜索框
   Widget buildBarSearchText() {
     return Expanded(
             child: InkWell(
@@ -129,8 +130,8 @@ class HomePage extends GetView<HomeController> {
                         ),
                         child: Image.asset(
                           AssetsImageConstant.homePageSearchIcon,
-                          width: 14,
-                          height: 14,
+                          width: 14.w,
+                          height: 14.h,
                         ),
                       ),
                       Container(
@@ -155,7 +156,7 @@ class HomePage extends GetView<HomeController> {
 //</editor-fold>
 
   //<editor-fold desc="车辆列表List">
-  /** 车辆列表List */
+  /// 车辆列表List
   SliverList buildCarSliverList(HomeController controller) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(

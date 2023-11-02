@@ -56,7 +56,7 @@ class MessagePage extends GetView<MsgController> {
   }
 
   //<editor-fold desc="消息列表">
-  /** 底部 详细信息列表 */
+  /// 底部 详细信息列表
   Widget buildMsgContentItemSliverList(MsgController controller) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
