@@ -1,7 +1,7 @@
 import 'package:cp_driver_app/entity/article_info_entity.dart';
 import 'package:cp_driver_app/generated/json/base/json_convert_content.dart';
 
-import '../base/interface.dart';
+import '../../base/interface.dart';
 
 ArticleInfoEntity $ArticleInfoEntityFromJson(Map<String, dynamic> json) {
   final ArticleInfoEntity articleInfoEntity = ArticleInfoEntity();

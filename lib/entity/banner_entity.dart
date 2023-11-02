@@ -1,7 +1,9 @@
+
 import '../base/interface.dart';
 import '../generated/json/base/json_field.dart';
-import '../generated/json/banner_entity.g.dart';
 import 'dart:convert';
+
+part '../generated/json/banner_entity.g.dart';
 
 @JsonSerializable()
 class BannerEntity implements IWebLoadInfo {
@@ -23,9 +25,9 @@ class BannerEntity implements IWebLoadInfo {
   BannerEntity();
 
   factory BannerEntity.fromJson(Map<String, dynamic> json) =>
-      $BannerEntityFromJson(json);
+      _$BannerEntityFromJson(json);
 
-  Map<String, dynamic> toJson() => $BannerEntityToJson(this);
+  Map<String, dynamic> toJson() => _$BannerEntityToJson(this);
 
   @override
   String toString() {

@@ -5,7 +5,6 @@
 import 'package:cp_driver_app/entity/account_info_entity.dart';
 import 'package:cp_driver_app/entity/article_info_entity.dart';
 import 'package:cp_driver_app/entity/banner_entity.dart';
-import 'package:cp_driver_app/entity/bill/my_bill_entity_model.dart';
 import 'package:cp_driver_app/entity/car/price_plan_entity.dart';
 import 'package:cp_driver_app/entity/coin_rank_entity.dart';
 import 'package:cp_driver_app/entity/hot_key_entity.dart';
@@ -170,12 +169,6 @@ class JsonConvert {
               (Map<String, dynamic> e) => BannerEntity.fromJson(e))
           .toList() as M;
     }
-    if (<MyBillEntityModel>[] is M) {
-      return data
-          .map<MyBillEntityModel>(
-              (Map<String, dynamic> e) => MyBillEntityModel.fromJson(e))
-          .toList() as M;
-    }
     if (<PricePlanEntity>[] is M) {
       return data
           .map<PricePlanEntity>(
@@ -249,7 +242,6 @@ class JsonConvertClassCollection {
     (ArticleInfoDatas).toString(): ArticleInfoDatas.fromJson,
     (ArticleInfoDatasTags).toString(): ArticleInfoDatasTags.fromJson,
     (BannerEntity).toString(): BannerEntity.fromJson,
-    (MyBillEntityModel).toString(): MyBillEntityModel.fromJson,
     (PricePlanEntity).toString(): PricePlanEntity.fromJson,
     (CoinRankEntity).toString(): CoinRankEntity.fromJson,
     (CoinRankDatas).toString(): CoinRankDatas.fromJson,
