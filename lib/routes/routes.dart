@@ -6,6 +6,7 @@ import 'package:cp_driver_app/pages/car/view/price_plan_detail_page.dart';
 import 'package:cp_driver_app/pages/my/view/order/order_detail_done_page.dart';
 import 'package:cp_driver_app/pages/my/view/order/order_detail_fulfillment_page.dart';
 import 'package:cp_driver_app/pages/my/view/order/order_detail_pick_up_page.dart';
+import 'package:cp_driver_app/pages/my/view/setting/setting_page.dart';
 import 'package:cp_driver_app/pages/pay/binding/select_pay_dialog_binding.dart';
 
 import '../pages/car/view/car_detail_page.dart';
@@ -114,6 +115,8 @@ abstract class Routes {
   static const myOrderCanceled = "/myOrderCanceled";
 
   static const myBill = "/myBill";
+
+  static const setting = "/setting";
 
   ///页面合集
   static final routePage = [
@@ -268,6 +271,8 @@ abstract class Routes {
       ],
     ),
     //</editor-fold>
+
+    GetPage(name: setting, page: () => const SettingPage()),
   ];
 
   static final unknownPage = GetPage(

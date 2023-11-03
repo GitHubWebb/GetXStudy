@@ -324,7 +324,7 @@ class PricePlanDetailPage extends GetView<PricePlanDetailController> {
   Widget buildSubmitBtn(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.only(left: 10, top: 14, right: 10, bottom: 13),
+      margin: EdgeInsets.only(left: 10.w, top: 14.h, right: 10.w, bottom: 13.h),
       child: TextButton(
         onPressed: () {
           controller.selectPayController.showSelectPayDialog(context);

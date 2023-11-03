@@ -150,7 +150,7 @@ class MyPage extends GetView<MyController> {
                                   BarItemWidget(
                                     title: "设置",
                                     imgPath: AssetsImageConstant.mySettingIcon,
-                                    onTap: () => {print("设置")},
+                                    onTap: () => { Get.toNamed(Routes.setting)},
                                   )
                                 ],
                               ),

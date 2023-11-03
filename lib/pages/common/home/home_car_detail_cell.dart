@@ -98,7 +98,7 @@ class HomeCarDetailCell extends StatelessWidget {
               ),
             )),
         Container(
-          margin: const EdgeInsets.only(left: 10, right: 10, bottom: 14),
+          margin: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 14.h),
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(10)),
